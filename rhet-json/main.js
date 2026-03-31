@@ -154,6 +154,8 @@ let renderItems = (data) => {
         if (termButton){
 
             // reaad glossary key from button
+            // asked claude to remind me what the .dataset accesses within javascript
+            //conversation: https://claude.ai/share/02377e0b-47d9-41ab-b4f5-e94a7832c9c2
             let key = termButton.dataset.term;
 
             //find the matching glossary item from lookup
@@ -173,6 +175,53 @@ let renderItems = (data) => {
             let modalDefinition = document.getElementById('modal-definition');
             //related list
             let modalRelated = document.getElementById('modal-related');
+
+
+
+            // put the term TEXT into the modal heading
+            modalTerm.textContent = termData.term;
+            // put term DEF into modal definition spot
+            modalDefinition.textContent = termData.definition;
+
+
+
+            // building an array for the existing related terms
+            // asked claude how I would approach related terms for those that have either two or three related 
+            // suggested using the .length() property to check
+            // conversation: https://claude.ai/share/02377e0b-47d9-41ab-b4f5-e94a7832c9c2
+            let related = [];
+
+
+            // check to see if not just whitespace and not empty
+            if (termData.related1 && termData.related1.trim().length > 0) {
+                // push to add to array
+                related.push(termData.related1.trim());
+            }
+
+            //repeat for related2
+            if (termData.related2 && termData.related2.trim().length > 0) {
+                // push to add to array
+                related.push(termData.related2.trim());
+            }
+
+            //repeat for related3
+            if (termData.related3 && termData.related3.trim().length > 0) {
+                // push to add to array
+                related.push(termData.related3.trim());
+            }
+
+
+
+
+
+            
+
+            //empty string for related terms
+            let relatedHTML = '';
+
+            //loop through each related term that exists
+
+    
 
         }
 
