@@ -73,62 +73,109 @@ let renderItems = (data) => {
 
 
 
+    // looping through each POST
+    // adapted from demo for loop from class
+
+    data.Posts.forEach((item) =>{
+
+        //convert [[terms]] into clickable buttons
+        let clickableBody = makeClickableTerms(item.body);
+
+        // build post HTML using template lit
+        let listItem =
+            `
+                <li>
+                    <h2>${item.emoji || ''} ${item.accountname}</h2>
+                    <p>${item.accounthandle}</em> • <time>${item.time}</time></p>
+                    <p>${clickableBody}</p>
+                    <p>❤️ ${item.likes} • 🔁 ${item.reposts} • 💬 ${item.comments}</p>
+                </li>
+            `;
+
+
+        // insert the post into the list
+        dataList.insertAdjacentHTML('beforeend',listItem);
 
 
 
 
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    });
 
 
 
 	// Loop through each item in the data array:
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-	data.forEach((item) => {
-		let conditionalClass = '' // Set an empty class variable.
+	// data.forEach((item) => {
+	// 	let conditionalClass = '' // Set an empty class variable.
 
 		// Conditional if this is `false` (“not true”):
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
-		if (!item.alsoWrote) {
-			conditionalClass = 'faded' // Update the variable.
-		}
+		// if (!item.alsoWrote) {
+		// 	conditionalClass = 'faded' // Update the variable.
+		// }
 
 		// Make a “template literal” as we have before, inserting your data (and maybe the class):
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-		let listItem =
-			`
-				<li class="${conditionalClass}">
-					<h2>${item.title}</h2>
-					<img src="${item.posterImage}">
-					<p>Released in <time>${item.year}</time></p>
-					<p><em>${item.runTime}</em></p>
-					<a href="${item.imdbLink}">
-						<p>${item.imdbRating} / 10 →</p>
-					</a>
-				</li>
-			`
+		// let listItem =
+		// 	`
+		// 		<li class="${conditionalClass}">
+		// 			<h2>${item.title}</h2>
+		// 			<img src="${item.posterImage}">
+		// 			<p>Released in <time>${item.year}</time></p>
+		// 			<p><em>${item.runTime}</em></p>
+		// 			<a href="${item.imdbLink}">
+		// 				<p>${item.imdbRating} / 10 →</p>
+		// 			</a>
+		// 		</li>
+		// 	`
 
-		dataList.insertAdjacentHTML('beforeend', listItem) // Add it to the `ul`!
+		// dataList.insertAdjacentHTML('beforeend', listItem) // Add it to the `ul`!
 
 		// Don’t feel limited to `ul > li` for these—you can insert any DOM, anywhere!
-	})
-}
+// 	})
+// }
+
+
+
+
+
+
+    //click handler
+
+    document.addEventListenet('click', (event) =>{
+
+    })
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
