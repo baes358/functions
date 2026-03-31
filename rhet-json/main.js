@@ -260,9 +260,15 @@ let renderItems = (data) => {
 
 
 
+        //closing the modal if click on close or backdrop
+
+        if (event.target.id === 'modal-close' || event.target.id === 'term-modal'){
+            document.getElementById('term-modal').hidden = true;
+        }
 
 
-    })
+
+    });
 
 };
 
