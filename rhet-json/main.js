@@ -22,9 +22,51 @@ let renderItems = (data) => {
 
 
 
+    // asked claude to clarify what the differences between .split(), .trim(), .slice() to use within my data
+    // conversation: https://claude.ai/share/02377e0b-47d9-41ab-b4f5-e94a7832c9c2
 
     // convert [[term]] text to clickable buttons by splitting the double brackets
-    let makeClickableTerms
+    let makeClickableTerms = (bodyText) => {
+        //split text where starts with double brackets
+        let parts = bodyText.split('[[');
+        // need to start plain text before the first [[term]]
+        let finalText = parts[0];
+
+        //start the loop for remaining parts that may contain terms and increment through
+        for (let i = 1; i < parts.length; i++){
+
+
+            // need to split where the term ends with ]]
+            let rightSplit = parts[i].split(']]');
+
+            //access term inside the brackets
+            let termText = rightSplit[0].trim();
+
+            // need to get the text coming after the term
+            //creating new array starting index 1, removing 1st element
+            // joins array back into the string, inserting double brackets back into element
+            let afterTerm = rightSplit.slice(1).join(']]');
+
+
+            // convert to lower case for glossary lookup
+            let key = termText.toLowerCase();
+
+            //build a clickable button HTML string for terms
+            let buttonHTML = 
+                `
+                <button class="term-link" daya-term="${key}" type="button">
+                    ${termText}
+                </button>
+                `
+            ;
+
+            //add the button and the trailing text to final output
+            finalText = finalText + buttonHTML + afterTerm;
+        }
+
+        //now return the final body string
+        return finalText;
+    };
 
 
 
@@ -52,8 +94,6 @@ let renderItems = (data) => {
 
 
 
-        })
-    }
 
 
 
