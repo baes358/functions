@@ -214,12 +214,43 @@ let renderItems = (data) => {
 
 
 
-            
+
 
             //empty string for related terms
             let relatedHTML = '';
 
             //loop through each related term that exists
+            related.forEach((relatedTerm) =>{
+                
+                //again need to do lowercase for lookup
+                let relatedKey = relatedTerm.toLowerCase();
+
+                //make related terms clickable as buttons
+                relatedHTML +=
+                `
+                    <li>
+                        <button class="term-link" data-term="${relatedKey}" type="button">
+                            ${relatedTerm}
+                        </button>
+                    </li>
+                `;
+            });
+
+
+
+
+
+
+
+            //need to insert the related terms into the modal as well
+            modalRelated.innerHTML = relatedHTML;
+
+
+
+
+
+
+
 
     
 
