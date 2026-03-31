@@ -27,6 +27,44 @@ let renderItems = (data) => {
         data.Glossary.forEach(function(item){
             // declare related term variable first
             let relatedText = "";
+
+            // if related1 exists, add it to the html
+            if (item.related1){
+                relatedText = relatedText + item.related1;
+            }
+
+            // if related2 exists, add comma if needed then add to html
+            if (item.related2){
+
+                if (relatedText !== ""){
+                    relatedText = relatedText + ", ";
+                }  
+                relatedText = relatedText + item.related2;
+            }
+
+            // same as related2 logic
+            // if related3 exists, add comma if needed then add to html
+            if (item.related3){
+
+                if (relatedText !== ""){
+                    relatedText = relatedText + ", ";
+                }  
+                relatedText = relatedText + item.related3;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         })
     }
 
