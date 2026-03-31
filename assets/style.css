@@ -24,12 +24,13 @@
     /* colors */
     --white: #eeeeee;
     --black:#323232;
+    --gray:#c8c8c8;
 }
 
 body{
     background:var(--white);
     color:var(--black);
-    padding:1rem;
+    padding:1.5rem;
 }
 
 h1{
@@ -48,5 +49,7 @@ h1 span{
 }
 
 #data-list li{
-    
+    padding:1rem;
+    margin-block-end:1rem;
+    border: 1.5px var(--gray) solid;
 }
