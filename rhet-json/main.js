@@ -23,7 +23,7 @@ let renderItems = (data) => {
 
 
     // asked claude to clarify what the differences between .split(), .trim(), .slice() to use within my data
-    // conversation: https://claude.ai/share/02377e0b-47d9-41ab-b4f5-e94a7832c9c2
+    // conversation: https://claude.ai/share/3ce87fcf-b4c8-483d-8803-c24e00251991
 
     // convert [[term]] text to clickable buttons by splitting the double brackets
     let makeClickableTerms = (bodyText) => {
@@ -97,7 +97,7 @@ let renderItems = (data) => {
                                 <time>${item.time}</time></p>
                             </section>
                         </section>
-                        
+
                     </section>
 
                     <p class="post-body">${clickableBody}</p>
