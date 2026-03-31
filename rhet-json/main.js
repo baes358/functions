@@ -2,6 +2,36 @@
 let renderItems = (data) => {
 	// The `ul` where the items will be inserted.
 	let dataList = document.getElementById('data-list')
+    //to check and show error if does not exists
+    if (!dataList){
+        console.error('Missing element with id="data-list" in index.html');
+        return;
+    }
+
+
+    // start content fresh so items are not duplicated
+    dataList.innerHTML = "";
+
+
+
+
+
+    // for Glossary section 
+    // check if it exists and is an array before looping
+    if (Array.isArray(data.Glossary)){
+        
+        // add heading TODO: maybe change placeholder name
+        dataList.insertAdjacentHTML("beforeend", "<li><h2>Glossary</h2></li>");
+
+        // loop through each item
+        data.Glossary.forEach(function(item){
+            // declare related term variable first
+            let relatedText = "";
+        })
+    }
+
+
+
 
 	// Loop through each item in the data array:
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
