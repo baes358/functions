@@ -1,12 +1,52 @@
 @font-face {
     font-family: 'Libre';
     src: url('../fonts/LibreFranklin-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400; /* or normal */
-    font-style: normal;
+    f
 }
 @font-face {
     font-family: 'Libre-Italic';
     src: url('../fonts/LibreFranklin-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400; /* or normal */
-    font-style: italic;
+
+}
+
+/* Tablet: 768px and up */
+@media (width >= 768px) {
+  /* tablet overrides */
+}
+/* Desktop: 1024px and up */
+@media (width >= 1024px) {
+  /* desktop overrides */
+}
+
+:root{
+    font-family:'Libre', sans-serif;
+
+    /* colors */
+    --white: #eeeeee;
+    --black:#323232;
+}
+
+body{
+    background:var(--white);
+    color:var(--black);
+    padding:1rem;
+}
+
+h1{
+    margin-block:1.2rem;
+    font-size:2rem;
+    text-transform: uppercase;
+    font-weight:800;
+    letter-spacing:.2em;
+    line-height: 1.9rem;
+}
+h1 span{
+    font-family: 'Libre-Italic';
+    font-size:1.65rem;
+    font-weight:300;
+    letter-spacing:0em;
+}
+
+#data-list li{
+    
 }
