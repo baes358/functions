@@ -1,0 +1,490 @@
+{
+    "Glossary": [
+        {
+            "id": "tariff",
+            "term": "Tariff",
+            "topic": "Economy",
+            "definition": "A tax placed on imported goods by the government. Meant to protect domestic industries by making foreign products more expensive, which usually often raises prices for consumers as well.",
+            "related1": "trade deficit",
+            "related2": "protectionism"
+        },
+        {
+            "id": "trade deficit",
+            "term": "Trade deficit",
+            "topic": "Economy",
+            "definition": "When a country imports more goods than it exports. Often cited negatively in political speeches, though economists disagree on whether it is actually harmful.",
+            "related1": "tariff",
+            "related2": "gdp"
+        },
+        {
+            "id": "gdp",
+            "term": "GDP",
+            "topic": "Economy",
+            "definition": "Gross Domestic Product: the total value of all goods and services a country produces in a year. The main scorecard that politicians use to measure economic health of a country.",
+            "related1": "trade deficit",
+            "related2": "recession",
+            "related3": "inflation"
+        },
+        {
+            "id": "recession",
+            "term": "Recession",
+            "topic": "Economy",
+            "definition": "When the economy shrinks for two consecutive quarters, the GDP goes down and is accompanied by rising unemployment and reduced consumer spending.",
+            "related1": "gdp",
+            "related2": "inflation",
+            "related3": "federal reserve"
+        },
+        {
+            "id": "inflation",
+            "term": "Inflation",
+            "topic": "Economy",
+            "definition": "When prices rise across the economy over time, reducing the purchasing power of money. A little inflation is normal, but too much erods savings and wages in an economy.",
+            "related1": "recession",
+            "related2": "federal reserve",
+            "related3": "gdp"
+        },
+        {
+            "id": "federal reserve",
+            "term": "Federal Reserve",
+            "topic": "Economy",
+            "definition": "The central bank of the United States. It is often referred to as \"the Fed,\" and it controls interest rates and the money supply to manage inflation and employment. It is independent of the President or Congress.",
+            "related1": "inflation",
+            "related2": "recession"
+        },
+        {
+            "id": "deficit spending",
+            "term": "Deficit spending",
+            "topic": "Economy",
+            "definition": "When the government deliberately spends more than it collects in taxes to stimulate the economy. Adds to the national debt but can jumpstart growth during downturns, or declines in the economy.",
+            "related1": "federal reserve",
+            "related2": "inflation",
+            "related3": "recession"
+        },
+        {
+            "id": "undocumented",
+            "term": "Undocumented",
+            "topic": "Immigration",
+            "definition": "A person living in a country without legal authorization. This is a supposed neutral term, whereas \"illegal\" is the charged phrased term by journalists.",
+            "related1": "asylum",
+            "related2": "deportation",
+            "related3": "border security"
+        },
+        {
+            "id": "asylum",
+            "term": "Asylum",
+            "topic": "Immigration",
+            "definition": "Legal protection granted to someone who fled their home country due to persecution. Seeking asylum is a legal right under international law, but it is not considered the same as legal immigration.",
+            "related1": "undocumented",
+            "related2": "deportation",
+            "related3": "refugee"
+        },
+        {
+            "id": "deportation",
+            "term": "Deportation",
+            "topic": "Immigration",
+            "definition": "The formal removal of a person from a country, usually because they are preset in the country without the proper legal status. Typically, there is a legal process one must go through with specific procedures and rights of appeal.",
+            "related1": "undocumented",
+            "related2": "asylum",
+            "related3": "border security"
+        },
+        {
+            "id": "refugee",
+            "term": "Refugee",
+            "topic": "Immigration",
+            "definition": "A person who has been forced to leave their country due to war, persecution, or disaster and has been granted official refugee status. They are different from asylum seekers, who are still awaiting an official decision.",
+            "related1": "asylum",
+            "related2": "undocumented"
+        },
+        {
+            "id": "border security",
+            "term": "Border security",
+            "topic": "Immigration",
+            "definition": "Policies and measures that are used to control who and what crosses a country's borders. This terms encompasses physical barriers, technology, personnel, and legal processes.",
+            "related1": "deportation",
+            "related2": "undocumented",
+            "related3": "asylum"
+        },
+        {
+            "id": "pathway to citizenship",
+            "term": "Pathway to citizenship",
+            "topic": "Immigration",
+            "definition": "A legal pathway that allows undocumented immigrants to eventually become citizens, which involves years of residency, background checks, and fees. ",
+            "related1": "undocumented",
+            "related2": "asylum"
+        },
+        {
+            "id": "daca",
+            "term": "DACA",
+            "topic": "Immigration",
+            "definition": "Deferred Action for Childhood Arrivals: a program protecting undocumented immigrants who were brought to the United States as children from deportation. They are also referred to as \"Dreamers.\"",
+            "related1": "undocumented",
+            "related2": "deportation",
+            "related3": "pathway to citizenship"
+        },
+        {
+            "id": "gerrymandering",
+            "term": "Gerrymandering",
+            "topic": "Elections",
+            "definition": "When politicians redraw voting district maps to favor their party in future elections. The term was named after Governor Elbridge Gerry, who approved a salamander-shaped district in 1812.",
+            "related1": "redistricting",
+            "related2": "swing district",
+            "related3": "voter suppression"
+        },
+        {
+            "id": "redistricting",
+            "term": "Redistricting",
+            "topic": "Elections",
+            "definition": "Redrawing congressional district boundaries every 10 years after the census. Who controls this process and how shapes election outcomes for an entire decade.",
+            "related1": "gerrymandering",
+            "related2": "swing district"
+        },
+        {
+            "id": "swing district",
+            "term": "Swing district",
+            "topic": "Elections",
+            "definition": "A voting district where neither party has a strong advantage. These swing districts attract the most campaign spending and media attention because they can decide who controls Congress.",
+            "related1": "gerrymandering",
+            "related2": "redistricting",
+            "related3": "voter suppression"
+        },
+        {
+            "id": "voter suppression",
+            "term": "Voter suppression",
+            "topic": "Elections",
+            "definition": "Policies aor tactics that make it harder for certain groups of people to vote. This can include strict ID laws, reduced polling locations, or purging voter rolls.",
+            "related1": "gerrymandering",
+            "related2": "swing district",
+            "related3": "electoral college"
+        },
+        {
+            "id": "electoral college",
+            "term": "Electoral college",
+            "topic": "Elections",
+            "definition": "The system used to elect the President of the United States. Each state gets a number of electors based on its congressional representation. Interestingly, a candidate can win the popular vote but lose the presidency.",
+            "related1": "swing district",
+            "related2": "voter suppression",
+            "related3": "primary"
+        },
+        {
+            "id": "primary",
+            "term": "Primary",
+            "topic": "Elections",
+            "definition": "An election within the political party to choose who will represent that party in the general election. Primaries attract more ideologically exctreme voters, which is why cadidates move to the center after winning one.",
+            "related1": "electoral college",
+            "related2": "swing district"
+        },
+        {
+            "id": "lame duck",
+            "term": "Lame duck",
+            "topic": "Elections",
+            "definition": "A politician still in office, but already on their way out. Essentially, they lost an election or announced that they will not be running again. This makes their ability to get things done limited, because everyone knows their time is up.",
+            "related1": "primary",
+            "related2": "electoral college"
+        },
+        {
+            "id": "single-payer",
+            "term": "Single-payer",
+            "topic": "Healthcare",
+            "definition": "A healthcare system where the government usually pays for everyone's care. Doctors and hospitals are private, and only the payment system is unified. It is referred to as \"Medicare for All.\"",
+            "related1": "public option",
+            "related2": "pre-existing condition",
+            "related3": "medicaid"
+        },
+        {
+            "id": "public option",
+            "term": "Public option",
+            "topic": "Healthcare",
+            "definition": "A government-run health insurance plan that competes alongside private insurance. One can choose it, but it is not mandatory.",
+            "related1": "single-payer",
+            "related2": "pre-existing condition",
+            "related3": "medicaid"
+        },
+        {
+            "id": "pre-existing condition",
+            "term": "Pre-existing condition",
+            "topic": "Healthcare",
+            "definition": "A health problem a person had before applying for a new insurance plan. Before the Affordable Care Act (often called Obamacare), insurers could deny coverage and charge more for these. Now, it is politically contested.",
+            "related1": "single-payer",
+            "related2": "public option",
+            "related3": "medicaid"
+        },
+        {
+            "id": "medicaid",
+            "term": "Medicaid",
+            "topic": "Healthcare",
+            "definition": "A government health insurance program for people with low income. It is jointly funded by federal and state governments. States have flexbility in how they run it, which is why coverage varies significantly by state.",
+            "related1": "medicare",
+            "related2": "public option",
+            "related3": "pre-existing condition"
+        },
+        {
+            "id": "medicare",
+            "term": "Medicare",
+            "topic": "Healthcare",
+            "definition": "A federal health insurance program for people 65 and older. It is one of the more popular government programs, which is why politicians rarely propose cutting it directly.",
+            "related1": "medicaid",
+            "related2": "single-payer",
+            "related3": "public option"
+        },
+        {
+            "id": "aca",
+            "term": "ACA",
+            "topic": "Healthcare",
+            "definition": "The Affordable Care Act (also referred to as Obamacare): a 2010 law that expanded health insurance coverage, created insurance marketplaces, and required insurers to cover pre-existing conditions.",
+            "related1": "pre-existing condition",
+            "related2": "medicaid",
+            "related3": "public option"
+        },
+        {
+            "id": "copay",
+            "term": "Copay",
+            "topic": "Healthcare",
+            "definition": "The fixed amount you pay out of pocket for a medical service after which insurance covers the rest. For example, paying $30 for a doctor visit.",
+            "related1": "aca",
+            "related2": "pre-existing condition",
+            "related3": "medicaid"
+        },
+        {
+            "id": "executive order",
+            "term": "Executive order",
+            "topic": "Constitutional",
+            "definition": "A directive order from the President that has the force of law without Congress voting on it. It is used to manage federal operations quickly. However, the next President can reverse them, making them controversial for long-term policy use.",
+            "related1": "veto",
+            "related2": "checks and balances",
+            "related3": "executive privilege"
+        },
+        {
+            "id": "veto",
+            "term": "Veto",
+            "topic": "Constitutional",
+            "definition": "The President's power to reject a bill passed by Congress. Congress can override it with a two-thirds majority in both chambers.",
+            "related1": "executive order",
+            "related2": "checks and balances",
+            "related3": "filibuster"
+        },
+        {
+            "id": "checks and balances",
+            "term": "Checks and balances",
+            "topic": "Constitutional",
+            "definition": "The system where each branch of government, executive, legislative, and judicical, has powers that limit the other two. This system is designed so that no single branch can become too powerful.",
+            "related1": "executive order",
+            "related2": "veto",
+            "related3": "executive privilege"
+        },
+        {
+            "id": "executive privilege",
+            "term": "Executive privilege",
+            "topic": "Constitutional",
+            "definition": "The President's claimed right to keep certain communications confidential, especially advice from advisors. It is not explicitly in the Consititution, but it is established through court cases.",
+            "related1": "executive order",
+            "related2": "checks and balances",
+            "related3": "subpoena"
+        },
+        {
+            "id": "subpoena",
+            "term": "Subpoena",
+            "topic": "Constitutional",
+            "definition": "A legal order requiring someone to appear in court or hand over documents. Congress can issue subpoenas during investigations, and ignoring one can result in charges from Congress.",
+            "related1": "executive privilege",
+            "related2": "checks and balances"
+        },
+        {
+            "id": "filibuster",
+            "term": "Filibuster",
+            "topic": "Constitutional",
+            "definition": "A Senate tactic where a senator extends debate to block a vote. You need 60 of 100 senators to end one, so the minority can stop bills even when the majority wants to pass them.",
+            "related1": "veto",
+            "related2": "cloture"
+        },
+        {
+            "id": "cloture",
+            "term": "Cloture",
+            "topic": "Constitutional",
+            "definition": "The only procedural way to end a filibuster in the Senate. It requires 60 senators to vote \"yes,\" and is often the real test of whether a bill can pass and not the final 51-vote majority.",
+            "related1": "filibuster",
+            "related2": "checks and balances"
+        }
+    ],
+    "Posts": [
+        {
+            "id": 1,
+            "topic": "Economy",
+            "accountname": "Economic Policy Watch",
+            "accounthandle": "@econwatch",
+            "emoji": "🏦",
+            "body": "The Senate is using reconciliation to pass the spending package, bypasing the [[filibuster]] entirely. This lets them move with 51 votes instead of 60. Critics call it a workaround; supporters say it is the only way to govern.",
+            "time": "2h",
+            "likes": "1.2k",
+            "reposts": 853,
+            "comments": 235
+        },
+        {
+            "id": 2,
+            "topic": "Economy",
+            "accountname": "Budget Bureau",
+            "accounthandle": "@budgetbureau",
+            "emoji": "📊",
+            "body": "New projections show the [[trade deficit]] widening again this quarter, driven by rising imports of consumer goods. Meanwhile a new round of [[tariff]]s on oil is pushing up manufacturing costs domestically.",
+            "time": "4h",
+            "likes": "22k",
+            "reposts": "9.3k",
+            "comments": "1.3k"
+        },
+        {
+            "id": 3,
+            "topic": "Economy",
+            "accountname": "Fed Watch Daily",
+            "accounthandle": "@fedwatch",
+            "emoji": "🇺🇸",
+            "body": "The [[federal reserve]] held rates steady today despite [[inflation]] ticking up to 3.4%. Chair noted that [[gdp]] growth remains resilient but warned that a [[recession]] risk cannot be ruled out heading into Q4.",
+            "time": "6h",
+            "likes": "2.1k",
+            "reposts": "1.3k",
+            "comments": 520
+        },
+        {
+            "id": 4,
+            "topic": "Immigration",
+            "accountname": "Border Policy Report",
+            "accounthandle": "@borderpolicy",
+            "emoji": "✈️",
+            "body": "Record numbers of migrants are arriving at the southern border, many filing for [[asylum]]. Processing times have stretched to over 2 years. [[Deportation]] proceedings for denied claims have backed up significantly.",
+            "time": "1h",
+            "likes": 589,
+            "reposts": 289,
+            "comments": 198
+        },
+        {
+            "id": 5,
+            "topic": "Immigration",
+            "accountname": "Immigration Now",
+            "accounthandle": "@immnow",
+            "emoji": "🗺",
+            "body": "Advocates are pushing for a formal [[pathway to citizenship]] for the estimated 11 million [[undocumented]] people currently living in the U.S. Opponents argue any such measure ammounts to rewarding illegal entry into the country.",
+            "time": "7h",
+            "likes": "2.8k",
+            "reposts": "1.3k",
+            "comments": 657
+        },
+        {
+            "id": 6,
+            "topic": "Immigration",
+            "accountname": "Policy Tracker",
+            "accounthandle": "@policytrack",
+            "emoji": "📈",
+            "body": "The administration announced expanded [[border security]] measures today, including new surveillance technology. [[DACA]] recipients remain in legal limbo after the latest court ruling blocked further expansion of the program.",
+            "time": "5h",
+            "likes": "1.8k",
+            "reposts": "1k",
+            "comments": 417
+        },
+        {
+            "id": 7,
+            "topic": "Elections",
+            "accountname": "Ballot Watch",
+            "accounthandle": "@ballotwatch",
+            "emoji": "🗳️",
+            "body": "New [[redistricting]] maps were released following the census. Critics are alleging [[gerrymandering]], pointing to several [[swing district]]s that appear drawn to dilute opposition voters in key suburban counties.",
+            "time": "2h",
+            "likes": 568,
+            "reposts": 179,
+            "comments": 98
+        },
+        {
+            "id": 8,
+            "topic": "Elections",
+            "accountname": "Democracy Desk",
+            "accounthandle": "@demdesk",
+            "emoji": "🗽",
+            "body": "New legislation would expand [[voter suppression]] protections, or tighten [[election integrity]] measures, depending on who you ask. The bill targets mail-in voting rules and polling hours in three key [[swing district]]s.",
+            "time": "4h",
+            "likes": "4.2k",
+            "reposts": "2.1k",
+            "comments": "1.3k"
+        },
+        {
+            "id": 9,
+            "topic": "Elections",
+            "accountname": "Campaign HQ",
+            "accounthandle": "@campaignhq",
+            "emoji": "📢",
+            "body": "With the [[primary]] season heating up, candidates are staking out positions that play well with base voters but may hurt them in the general. The [[electoral college]] math still favors candidates who can win three or four key states.",
+            "time": "7h",
+            "likes": "11k",
+            "reposts": "7.4k",
+            "comments": "8k"
+        },
+        {
+            "id": 10,
+            "topic": "Healthcare",
+            "accountname": "Health Policy Now",
+            "accounthandle": "@healthpolicy",
+            "emoji": "⚕️",
+            "body": "The debate between a [[public option]] and full [[single-payer]] healthcare is heating up again in the Senate. At the center of it all: protections for [[pre-existing condition]]s, which both proposals preserve but through very different funding mechanisms. Read more in our bio.",
+            "time": "1h",
+            "likes": "1.2k",
+            "reposts": 931,
+            "comments": 389
+        },
+        {
+            "id": 11,
+            "topic": "Healthcare",
+            "accountname": "Coverage News",
+            "accounthandle": "@coverwatch",
+            "emoji": "🗞️",
+            "body": "New analysis shows [[medicaid]] expansion under the [[ACA]] reduced uninsured rates by 40% in states that adopted it. States that refused expansion still have significantly higher rates of uninsured residents and higher hospital [[copay]] burdens.",
+            "time": "3h",
+            "likes": "2.3k",
+            "reposts": "1.4k",
+            "comments": 453
+        },
+        {
+            "id": 12,
+            "topic": "Healthcare",
+            "accountname": "Senior Policy Brief",
+            "accounthandle": "@seniorpolicy",
+            "emoji": "✒️",
+            "body": "Proposals to expand [[medicare]] to cover dental and vision are gaining immense support. Critics warn it would add to the spending deficit; supporters point to [[medicaid]] cost-effectiveness data suggesting preventative care reduces long-term spending.",
+            "time": "6h",
+            "likes": 987,
+            "reposts": 445,
+            "comments": 276
+        },
+        {
+            "id": 13,
+            "topic": "Constitutional",
+            "accountname": "Constitutional Brief",
+            "accounthandle": "@constbrief",
+            "emoji": "📜",
+            "body": "The president recently signed a sweeping [[executive order]] today, bypassing Congress entirely. Legal scholars say it tests the limits of [[checks and balances]]. Congressional leaders are weighing a [[subpoena]] for internal communications under [[executive privilege]] claims.",
+            "time": "2h",
+            "likes": "14k",
+            "reposts": "11k",
+            "comments": "9.3k"
+        },
+        {
+            "id": 14,
+            "topic": "Constitutional",
+            "accountname": "Senate Floor Report",
+            "accounthandle": "@senatefloor",
+            "emoji": "⚖️",
+            "body": "Attempts to invoke [[cloture]] and end the [[filibuster]] on the voting rights bill failed again, failing four votes short of the 60 votes needed. Leadership is now exploring whether reconciliation could be used as a procedural workaround, though procedural experts are skeptical.",
+            "time": "10h",
+            "likes": "3.1k",
+            "reposts": "1.8k",
+            "comments": 743
+        },
+        {
+            "id": 15,
+            "topic": "Constitutional",
+            "accountname": "Supreme Court Watch",
+            "accounthandle": "@scotuswatch",
+            "emoji": "🏛️",
+            "body": "The Supreme Court heard arguments today on whether the President overstepped by issuing an [[executive order]] without congressional authorization. At stake is the scope of [[checks and balances]], specifically whether the Court will uphold the lower ruling that the order violated the separation of powers. The White House invoked [[executive privilege]] to block a congressional [[subpoena]] for internal memos. A decision is expected before the end of the term.",
+            "time": "30m",
+            "likes": "4.7k",
+            "reposts": "3.2k",
+            "comments": "1.4k"
+        }
+    ]
+}
