@@ -85,8 +85,15 @@ let renderItems = (data) => {
         let listItem =
             `
                 <li>
-                    <h2>${item.emoji || ''} ${item.accountname}</h2>
-                    <p>${item.accounthandle}</em> • <time>${item.time}</time></p>
+                    <section class="profile-header">
+                        <section class="initials">${item.initials}</section>
+
+                        <section class="profile-meta">
+                            <h2>${item.emoji || ''} ${item.accountname}</h2>
+                            <p>${item.accounthandle}</em> • <time>${item.time}</time></p>
+                        </section>
+                    </section>
+                    
                     <p>${clickableBody}</p>
                     <p>❤️ ${item.likes} • 🔁 ${item.reposts} • 💬 ${item.comments}</p>
                 </li>
