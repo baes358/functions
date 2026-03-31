@@ -54,7 +54,7 @@ let renderItems = (data) => {
             //build a clickable button HTML string for terms
             let buttonHTML = 
                 `
-                <button class="term-link" daya-term="${key}" type="button">
+                <button class="term-link" data-term="${key}" type="button">
                     ${termText}
                 </button>
                 `
@@ -143,7 +143,7 @@ let renderItems = (data) => {
 
     //click handler
 
-    document.addEventListenet('click', (event) =>{
+    document.addEventListener('click', (event) =>{
 
 
         //checking to see if click happened on term
