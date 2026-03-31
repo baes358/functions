@@ -89,13 +89,27 @@ let renderItems = (data) => {
                         <section class="initials">${item.initials}</section>
 
                         <section class="profile-meta">
-                            <h2>${item.emoji || ''} ${item.accountname}</h2>
-                            <p>${item.accounthandle}</em> • <time>${item.time}</time></p>
+                            <h2 class="acc-name">${item.emoji || ''} ${item.accountname}</h2>
+
+                            <section class="handle-sect">
+                                <p class="handle">${item.accounthandle}</em>
+                                <p class="divider"> • </p>
+                                <time>${item.time}</time></p>
+                            </section>
                         </section>
+                        
                     </section>
-                    
-                    <p>${clickableBody}</p>
-                    <p>❤️ ${item.likes} • 🔁 ${item.reposts} • 💬 ${item.comments}</p>
+
+                    <p class="post-body">${clickableBody}</p>
+
+                    <section class="post-stats">
+                        <p class="likes">❤️ ${item.likes}</p>
+                        <p class="divider"> • </p>
+                        <p class="reposts">🔁 ${item.reposts}</p>
+                        <p class="divider"> • </p>
+                        <p class="reposts">💬 ${item.comments}</p>
+                    </section>
+    
                 </li>
             `;
 
