@@ -145,6 +145,41 @@ let renderItems = (data) => {
 
     document.addEventListenet('click', (event) =>{
 
+
+        //checking to see if click happened on term
+        let termButton = event.target.closest('.term-link');
+
+        // now we gotta check if term button was clicked then open the modal!!!
+
+        if (termButton){
+
+            // reaad glossary key from button
+            let key = termButton.dataset.term;
+
+            //find the matching glossary item from lookup
+            let termData = glossaryLookup[key];
+
+
+
+            // if there is no matching glossary term then just stop
+            if (!termData) return;
+
+
+            //backdrop for modal
+            let modal = document.getElementById('term-modal');
+            //title element
+            let modalTerm = document.getElementById('modal-term');
+            //definition 
+            let modalDefinition = document.getElementById('modal-definition');
+            //related list
+            let modalRelated = document.getElementById('modal-related');
+
+        }
+
+
+
+
+
     })
 
 };
