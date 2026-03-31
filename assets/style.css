@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Libre';
+    src: url('../fonts/LibreFranklin-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400; /* or normal */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Libre-Italic';
+    src: url('../fonts/LibreFranklin-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400; /* or normal */
+    font-style: italic;
+}
