@@ -249,7 +249,9 @@ let renderItems = (data) => {
 
 
 
+            //MAKE MODAL VISIBLE!!! because remember set at hidden
 
+            modal.hidden = false;
 
 
     
