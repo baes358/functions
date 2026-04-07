@@ -168,3 +168,8 @@ h1 span{
 	padding: var(--14px) 1rem;
 	box-shadow: 0 var(--7px) 1.5rem rgba(0, 0, 0, 0.15);
 }
+
+#post-modal-title {
+	margin: 0 0 var(--7px) 0;
+	font-size: 1.5rem;
+}
