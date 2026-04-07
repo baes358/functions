@@ -139,6 +139,10 @@ let renderItems = (data) => {
 
         postInner.innerHTML = buildPostCardInnerHTML(postData);
 
+        postInner.classList.add('tweet-card');
+        
+    
+
 
         // // starting with empty initials in case missing
         // let initialsText = '';
@@ -201,7 +205,10 @@ let renderItems = (data) => {
 	    postModal.hidden = false;
         return;
 
-    }
+    };
+
+
+    
 
 
 
