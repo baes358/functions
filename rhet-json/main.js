@@ -90,7 +90,7 @@ let renderItems = (data) => {
         // build post HTML using template lit
         let listItem =
             `
-                <li>
+                <li class="tweet-card" data-post-id="${item.id}>
                     <section class="profile-header">
                         <section class="initials">${item.initials}</section>
 
