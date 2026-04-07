@@ -208,7 +208,7 @@ let renderItems = (data) => {
     };
 
 
-    
+
 
 
 
@@ -407,6 +407,8 @@ let renderItems = (data) => {
             modalRelated.innerHTML = relatedHTML;
 
 
+            // so term layer only jumps above post modal WHEN user opens glossary from term button
+            modal.classList.add('term-front');
 
 
 
@@ -421,7 +423,7 @@ let renderItems = (data) => {
 
 
         //need to now handle post card clicks
-        let postCard = event.target.closest('.tweet-card');
+        let postCard = event.target.closest('#data-list .tweet-card');
 
         if (postCard){
             let postId = postCard.dataset.postId;
@@ -441,7 +443,9 @@ let renderItems = (data) => {
         //closing the modal if click on close or backdrop
 
         if (event.target.id === 'modal-close' || event.target.id === 'term-modal'){
-            document.getElementById('term-modal').hidden = true;
+            let termModal = document.getElementById('term-modal');
+	        termModal.hidden = true;
+	        termModal.classList.remove('term-front');
         }
         //closing the post modal if click on close or backdrop
 

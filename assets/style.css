@@ -120,6 +120,8 @@ h1 span{
     font-weight:500;
 }
 
+
+
 .term-link{
     background:var(--yellow);
     cursor:pointer
@@ -169,7 +171,14 @@ h1 span{
 	box-shadow: 0 var(--7px) 1.5rem rgba(0, 0, 0, 0.15);
 }
 
-#post-modal-title {
-	margin: 0 0 var(--7px) 0;
-	font-size: 1.5rem;
+
+/* term modal styling */
+
+#term-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 998;
+}
+#term-modal.term-front {
+	z-index: 1200;
 }
