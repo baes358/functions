@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Libre';
     src: url('../fonts/LibreFranklin-VariableFont_wght.ttf') format('truetype');
-    f
+    
 }
 @font-face {
     font-family: 'Libre-Italic';
@@ -157,9 +157,7 @@ h1 span{
 	z-index: 999;
 
 
-    /* transform when term modal is open */
-    transition: transform 0.35s ease;
-	will-change: transform;
+    
 }
 
 /* Hidden state support */
@@ -170,14 +168,18 @@ h1 span{
 
 #post-modal .modal-content {
 	width: 40rem;
-	background: #fff;
+	background: var(--white);
 	border: var(--1px) solid #e6ecf0;
 	border-radius: var(--14px);
 	padding: var(--14px) 1rem;
 	box-shadow: 0 var(--7px) 1.5rem rgba(0, 0, 0, 0.15);
+
+    /* transform when term modal is open */
+    transition: transform 0.35s ease;
+	will-change: transform;
 }
 
-#post-modal.is-bumped {
+#post-modal .modal-content.is-bumped {
 	transform: translateY(-12vh);
 }
 
@@ -193,9 +195,19 @@ h1 span{
 	align-items: flex-end; 
 	justify-content: center;
 	padding: 1rem;
+
+    
+    
 }
 #term-modal .modal-content {
-	margin-bottom: 8vh;
+	/* margin-bottom: 8vh; */
+    background: var(--white);
+	border: var(--1-5px) var(--gray) solid;
+	border-radius: var(--7px);
+	padding: 1rem;
+	max-width: 40rem;
+	width: 100%;
+	box-shadow: 0 var(--7px) 1.5rem rgba(0, 0, 0, 0.15);
 }
 #term-modal.term-front {
 	z-index: 1200;

@@ -234,7 +234,7 @@ let renderItems = (data) => {
                             <section class="handle-sect">
                                 <p class="handle">${item.accounthandle}</p>
                                 <p class="divider"> • </p>
-                                <time>${item.time}</time></p>
+                                <time>${item.time}</time>
                             </section>
                         </section>
 
@@ -331,9 +331,9 @@ let renderItems = (data) => {
 
 
             // grabbing post modal so that it adds class for bump transition with term modal
-            let postModal = document.getElementById('post-modal');
-            if (postModal && postModal.hidden === false) {
-                postModal.classList.add('is-bumped');
+            let postCard = document.querySelector('modal-content');
+            if (postCard) {
+                postCard.classList.add('is-bumped');
             }
 
 
@@ -464,8 +464,11 @@ let renderItems = (data) => {
 	        termModal.classList.remove('term-front');
 
             // making sure to remove class for post modal as well when term modal is affected
-	        let postModal = document.getElementById('post-modal');
-	        postModal.classList.remove('is-bumped');
+	        let postCard = document.querySelector('modal-content');
+            if (postCard){
+                postCard.classList.remove('is-bumped');
+            }
+	        
 
 
         }
