@@ -333,7 +333,7 @@ let renderItems = (data) => {
             // grabbing post modal so that it adds class for bump transition with term modal
             let postModal = document.getElementById('post-modal');
             if (postModal && postModal.hidden === false) {
-                let postCard = document.querySelector('.modal-content');
+                let postCard = postModal.querySelector('.modal-content');
                 if (postCard) {
                     postCard.classList.add('is-bumped');
                 }
