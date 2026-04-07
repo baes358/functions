@@ -328,6 +328,21 @@ let renderItems = (data) => {
             if (!termData) return;
 
 
+
+
+            // grabbing post modal so that it adds class for bump transition with term modal
+            let postModal = document.getElementById('post-modal');
+            if (postModal && postModal.hidden === false) {
+                postModal.classList.add('is-bumped');
+            }
+
+
+
+
+
+
+
+
             //backdrop for modal
             let modal = document.getElementById('term-modal');
             //title element
@@ -415,6 +430,7 @@ let renderItems = (data) => {
             //MAKE MODAL VISIBLE!!! because remember set at hidden
 
             modal.hidden = false;
+            return;
 
 
     
@@ -446,6 +462,12 @@ let renderItems = (data) => {
             let termModal = document.getElementById('term-modal');
 	        termModal.hidden = true;
 	        termModal.classList.remove('term-front');
+
+            // making sure to remove class for post modal as well when term modal is affected
+	        let postModal = document.getElementById('post-modal');
+	        postModal.classList.remove('is-bumped');
+
+
         }
         //closing the post modal if click on close or backdrop
 

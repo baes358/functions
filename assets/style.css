@@ -155,12 +155,18 @@ h1 span{
     /* 16px - 1rem */
 	padding: 1rem;
 	z-index: 999;
+
+
+    /* transform when term modal is open */
+    transition: transform 0.35s ease;
+	will-change: transform;
 }
 
 /* Hidden state support */
 #post-modal[hidden] {
 	display: none;
 }
+
 
 #post-modal .modal-content {
 	width: 40rem;
@@ -171,6 +177,10 @@ h1 span{
 	box-shadow: 0 var(--7px) 1.5rem rgba(0, 0, 0, 0.15);
 }
 
+#post-modal.is-bumped {
+	transform: translateY(-12vh);
+}
+
 
 /* term modal styling */
 
@@ -178,7 +188,18 @@ h1 span{
 	position: fixed;
 	inset: 0;
 	z-index: 998;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+	align-items: flex-end; 
+	justify-content: center;
+	padding: 1rem;
+}
+#term-modal .modal-content {
+	margin-bottom: 8vh;
 }
 #term-modal.term-front {
 	z-index: 1200;
+}
+#term-modal[hidden] {
+	display: none !important;
 }
