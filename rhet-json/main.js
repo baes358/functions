@@ -461,6 +461,15 @@ let renderItems = (data) => {
                 termPanel.style.marginBlockEnd = '0';
                 termPanel.style.overflow = 'auto';
 
+            } else if (termPanel) {
+                // clearing inline styles here in conditional statement so that term modal is centered when post modal does not exist
+                termPanel.style.position = '';
+                termPanel.style.top = '';
+                termPanel.style.left = '';
+                termPanel.style.transform = '';
+                termPanel.style.width = '';
+                termPanel.style.marginBlockEnd = '';
+                termPanel.style.overflow = '';
             }
 
 
