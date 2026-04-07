@@ -84,6 +84,46 @@ let renderItems = (data) => {
         let postBody = document.getElementById('post-modal-body');
         let postStats = document.getElementById('post-modal-stats');
 
+
+        // starting with empty initials in case missing
+        let initialsText = '';
+        // if exist, fill variable with
+        if (postData.initials){
+            initialsText = postData.initials;
+        }
+
+        // building the title text
+        let titleText = initialsText;
+
+        // If title has initials alr, then add space before adding acc name
+        if (titleText.length > 0) {
+            titleText = titleText + ' ';
+        }
+
+        // add accountname to title text
+        titleText = titleText + postData.accountname;
+        //put final title text in modal title element
+        postTitle.textContent = titleText;
+
+
+
+        //now building meta text
+        let metaText = '';
+
+        // account handle first
+        metaText = metaText + postData.accounthandle;
+
+        // separater and topic and time next
+        metaText = metaText + ' • ' + postData.topic + ' • ' + postData.time;
+
+        //put into post meta
+        postMeta.textContent = metaText;
+
+
+
+        // convert [[term]] into clickable term buttons using helper function
+
+
     }
 
 
