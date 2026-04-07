@@ -357,6 +357,12 @@ let renderItems = (data) => {
         }
 
 
+        //need to now handle post card clicks
+        let postCard = event.target.closest('.tweet-card');
+
+        if (postCard){
+            let postId = postCard.dataset.postId;
+        }
 
         //closing the modal if click on close or backdrop
 
