@@ -122,7 +122,28 @@ let renderItems = (data) => {
 
 
         // convert [[term]] into clickable term buttons using helper function
+        let bodyHTML = makeClickableTerms(postData.body);
 
+        // asked claude to remind and clarify to me the difference of textcontent and innerhtml
+        // conversation: https://claude.ai/share/03efce1b-3d63-40fe-9717-7d4e3636c9e1
+        // put into modal body
+        postBody.innerHTML = bodyHTML;
+
+
+        // now build stats
+        let statsText = '';
+        //add the likes
+        statsText = statsText + '❤️ ' + postData.likes;
+        //add reposts
+        statsText = statsText + ' • 🔁 ' + postData.reposts;
+        //add comments
+        statsText = statsText + ' • 💬 ' + postData.comments;
+        //put into posts element
+        postStats.textContent = statsText;
+        
+
+        // show the modal
+	    postModal.hidden = false;
 
     }
 
