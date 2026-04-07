@@ -144,6 +144,7 @@ let renderItems = (data) => {
 
         // show the modal
 	    postModal.hidden = false;
+        return;
 
     }
 
@@ -169,7 +170,7 @@ let renderItems = (data) => {
                             <h2 class="acc-name">${item.emoji || ''} ${item.accountname}</h2>
 
                             <section class="handle-sect">
-                                <p class="handle">${item.accounthandle}</em>
+                                <p class="handle">${item.accounthandle}</p>
                                 <p class="divider"> • </p>
                                 <time>${item.time}</time></p>
                             </section>
