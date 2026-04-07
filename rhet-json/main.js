@@ -329,12 +329,16 @@ let renderItems = (data) => {
 
 
 
-
+            // first need to grab the id for the post modal
             // grabbing post modal so that it adds class for bump transition with term modal
-            let postCard = document.querySelector('modal-content');
-            if (postCard) {
-                postCard.classList.add('is-bumped');
+            let postModal = document.getElementById('post-modal');
+            if (postModal && postModal.hidden === false) {
+                let postCard = document.querySelector('.modal-content');
+                if (postCard) {
+                    postCard.classList.add('is-bumped');
+                }
             }
+            
 
 
 
@@ -463,8 +467,10 @@ let renderItems = (data) => {
 	        termModal.hidden = true;
 	        termModal.classList.remove('term-front');
 
+            // still need to grab post modal id first - then access modal content
             // making sure to remove class for post modal as well when term modal is affected
-	        let postCard = document.querySelector('modal-content');
+            let postModal = document.getElementById('post-modal');
+	        let postCard = postModal.querySelector('.modal-content');
             if (postCard){
                 postCard.classList.remove('is-bumped');
             }
