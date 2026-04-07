@@ -362,12 +362,28 @@ let renderItems = (data) => {
 
         if (postCard){
             let postId = postCard.dataset.postId;
+            let postData = postsLookup[postId];
+
+            if(postData){
+                openPostModal(postData);
+            }
+            return;
         }
+
+
+
+
+
 
         //closing the modal if click on close or backdrop
 
         if (event.target.id === 'modal-close' || event.target.id === 'term-modal'){
             document.getElementById('term-modal').hidden = true;
+        }
+        //closing the post modal if click on close or backdrop
+
+        if (event.target.id === 'post-modal-close' || event.target.id === 'post-modal'){
+            document.getElementById('post-modal').hidden = true;
         }
 
 
