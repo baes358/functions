@@ -76,6 +76,16 @@ let renderItems = (data) => {
 
 
 
+    // function for opening a post
+    let openPostModal = (postData) => {
+        let postModal = document.getElementById('post-modal');
+        let postTitle = document.getElementById('post-modal-title');
+        let postMeta = document.getElementById('post-modal-meta');
+        let postBody = document.getElementById('post-modal-body');
+        let postStats = document.getElementById('post-modal-stats');
+
+    }
+
 
 
 
