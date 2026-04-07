@@ -332,6 +332,7 @@ let renderItems = (data) => {
             // first need to grab the id for the post modal
             // grabbing post modal so that it adds class for bump transition with term modal
             let postModal = document.getElementById('post-modal');
+            
             if (postModal && postModal.hidden === false) {
                 let postCard = postModal.querySelector('.modal-content');
                 if (postCard) {
@@ -434,6 +435,50 @@ let renderItems = (data) => {
             //MAKE MODAL VISIBLE!!! because remember set at hidden
 
             modal.hidden = false;
+
+
+
+
+            // asked claude if there is a way to retrieve the size and position of an element relative to the viewport
+            // also asked about styling within the parameters of getBoundingClientRect(), which apparently is better for dynamic styling whereas CSS styling is more static
+            // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
+
+            let postCard = postModal.querySelector('.modal-content');
+            let termPanel = document.querySelector('#term-modal .modal-content');
+
+            if (postModal && postModal.hidden === false && postCard && termPanel) {
+
+                let rect = postCard.getBoundingClientRect();
+
+                let gap = 8;
+
+                // css styling within
+                termPanel.style.position = 'fixed';
+                termPanel.style.top = (rect.bottom + gap) + 'px';
+                termPanel.style.left = '50%';
+                termPanel.style.transform = 'translateX(-50%)';
+                termPanel.style.width = 'min(40rem, calc(100vw - 2rem))';
+                termPanel.style.marginBlockEnd = '0';
+                termPanel.style.overflow = 'auto';
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             return;
 
 
@@ -463,6 +508,25 @@ let renderItems = (data) => {
         //closing the modal if click on close or backdrop
 
         if (event.target.id === 'modal-close' || event.target.id === 'term-modal'){
+
+            // resetting inline styles for modal content
+            let termPanel = document.querySelector('#term-modal .modal-content');
+                if (termPanel) {
+                    termPanel.style.position = '';
+                    termPanel.style.top = '';
+                    termPanel.style.left = '';
+                    termPanel.style.transform = '';
+                    termPanel.style.width = '';
+                    termPanel.style.marginBlockEnd = '';
+                    termPanel.style.overflow = '';
+                }
+
+
+
+
+
+
+
             let termModal = document.getElementById('term-modal');
 	        termModal.hidden = true;
 	        termModal.classList.remove('term-front');
