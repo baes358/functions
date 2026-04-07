@@ -31,11 +31,14 @@
 
 
     /* rem units */
+    --1px: 0.063rem;
     --1-5px: 0.09375rem;
     --2px: .125rem;
     --7px:0.438rem;
+    --14px: 0.875;
     --50px: 3.125rem;
     --999px: 50rem;
+
 }
 
 body{
@@ -139,6 +142,7 @@ h1 span{
 
 /* post modal styling */
 
+
 #post-modal {
 	position: fixed;
 	inset: 0;
@@ -146,7 +150,8 @@ h1 span{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 16px;
+    /* 16px - 1rem */
+	padding: 1rem;
 	z-index: 999;
 }
 
@@ -155,4 +160,11 @@ h1 span{
 	display: none;
 }
 
-
+#post-modal .modal-content {
+	width: 40rem;
+	background: #fff;
+	border: var(--1px) solid #e6ecf0;
+	border-radius: var(--14px);
+	padding: var(--14px) 1rem;
+	box-shadow: 0 var(--7px) 1.5rem rgba(0, 0, 0, 0.15);
+}
