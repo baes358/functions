@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 // Function to render your items.
 let renderItems = (data) => {
 	// The `ul` where the items will be inserted.
@@ -76,70 +84,117 @@ let renderItems = (data) => {
 
 
 
+
+
+
+    // function to build post card html!!!! TODO
+    let buildPostCardInnerHTML = (postData) => {
+	    let clickableBody = makeClickableTerms(postData.body);
+
+        return (
+            // format like listitem so looks identical
+            '<section class="profile-header">' +
+
+                '<section class="initials">' + (postData.initials || '') + '</section>' +
+
+                '<section class="profile-meta">' +
+                    '<h2 class="acc-name">' +
+                        (postData.emoji || '') + ' ' + postData.accountname + 
+                    '</h2>' +
+                    '<section class="handle-sect">' +
+                        '<p class="handle">' + postData.accounthandle + '</p>' +
+                        '<p class="divider"> • </p>' +
+                        '<time>' + postData.time + '</time>' +
+                    '</section>' +
+                '</section>' +
+            '</section>' +
+            '<p class="post-body">' + clickableBody + '</p>' +
+            '<section class="post-stats">' +
+                '<p class="likes">❤️ ' + postData.likes + '</p>' +
+                '<p class="divider"> • </p>' +
+                '<p class="reposts">🔁 ' + postData.reposts + '</p>' +
+                '<p class="divider"> • </p>' +
+                '<p class="reposts">💬 ' + postData.comments + '</p>' +
+
+            '</section>'
+        );
+    };
+
+
+
+
+
     // function for opening a post
     let openPostModal = (postData) => {
         let postModal = document.getElementById('post-modal');
-        let postTitle = document.getElementById('post-modal-title');
-        let postMeta = document.getElementById('post-modal-meta');
-        let postBody = document.getElementById('post-modal-body');
-        let postStats = document.getElementById('post-modal-stats');
+        
+        let postInner = document.getElementById('post-modal-inner');
 
 
-        // starting with empty initials in case missing
-        let initialsText = '';
-        // if exist, fill variable with
-        if (postData.initials){
-            initialsText = postData.initials;
+
+        // if empty return
+        if (postModal === null || postInner === null) {
+            return;
         }
 
-        // building the title text
-        let titleText = initialsText;
-
-        // If title has initials alr, then add space before adding acc name
-        if (titleText.length > 0) {
-            titleText = titleText + ' ';
-        }
-
-        // add accountname to title text
-        titleText = titleText + postData.accountname;
-        //put final title text in modal title element
-        postTitle.textContent = titleText;
+        postInner.innerHTML = buildPostCardInnerHTML(postData);
 
 
+        // // starting with empty initials in case missing
+        // let initialsText = '';
+        // // if exist, fill variable with
+        // if (postData.initials){
+        //     initialsText = postData.initials;
+        // }
 
-        //now building meta text
-        let metaText = '';
+        // // building the title text
+        // let titleText = initialsText;
 
-        // account handle first
-        metaText = metaText + postData.accounthandle;
+        // // If title has initials alr, then add space before adding acc name
+        // if (titleText.length > 0) {
+        //     titleText = titleText + ' ';
+        // }
 
-        // separater and topic and time next
-        metaText = metaText + ' • ' + postData.topic + ' • ' + postData.time;
-
-        //put into post meta
-        postMeta.textContent = metaText;
+        // // add accountname to title text
+        // titleText = titleText + postData.accountname;
+        // //put final title text in modal title element
+        // postTitle.textContent = titleText;
 
 
 
-        // convert [[term]] into clickable term buttons using helper function
-        let bodyHTML = makeClickableTerms(postData.body);
+        // //now building meta text
+        // let metaText = '';
 
-        // asked claude to remind and clarify to me the difference of textcontent and innerhtml
-        // conversation: https://claude.ai/share/03efce1b-3d63-40fe-9717-7d4e3636c9e1
-        // put into modal body
-        postBody.innerHTML = bodyHTML;
+        // // account handle first
+        // metaText = metaText + postData.accounthandle;
+
+        // // separater and topic and time next
+        // metaText = metaText + ' • ' + postData.topic + ' • ' + postData.time;
+
+        // //put into post meta
+        // postMeta.textContent = metaText;
 
 
-        // now build stats
-        let statsText = '';
-        //add the likes
-        statsText = statsText + '❤️ ' + postData.likes;
-        //add reposts
-        statsText = statsText + ' • 🔁 ' + postData.reposts;
-        //add comments
-        statsText = statsText + ' • 💬 ' + postData.comments;
-        //put into posts element
-        postStats.textContent = statsText;
+
+        // // convert [[term]] into clickable term buttons using helper function
+        // let bodyHTML = makeClickableTerms(postData.body);
+
+        // // asked claude to remind and clarify to me the difference of textcontent and innerhtml
+        // // conversation: https://claude.ai/share/03efce1b-3d63-40fe-9717-7d4e3636c9e1
+        // // put into modal body
+        // postBody.innerHTML = bodyHTML;
+
+
+        // // now build stats
+        // let statsText = '';
+        // //add the likes
+        // statsText = statsText + '❤️ ' + postData.likes;
+        // //add reposts
+        // statsText = statsText + ' • 🔁 ' + postData.reposts;
+        // //add comments
+        // statsText = statsText + ' • 💬 ' + postData.comments;
+        // //put into posts element
+        // postStats.textContent = statsText;
         
 
         // show the modal
