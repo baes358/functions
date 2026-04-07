@@ -21,6 +21,12 @@ let renderItems = (data) => {
     });
 
 
+    // want to make posts clickable for the users as well
+    let postsLookup = {};
+    
+    data.Posts.forEach((post) => {
+        postsLookup[String(post.id)] = post;
+    });
 
     // asked claude to clarify what the differences between .split(), .trim(), .slice() to use within my data
     // conversation: https://claude.ai/share/3ce87fcf-b4c8-483d-8803-c24e00251991
