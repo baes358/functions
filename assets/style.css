@@ -10,11 +10,11 @@
 }
 
 /* Tablet: 768px and up */
-@media (width >= 768px) {
+@media (768px <= width <= 1024px) {
   /* tablet overrides */
 }
 /* Desktop: 1024px and up */
-@media (width >= 1024px) {
+@media (width > 1024px) {
   /* desktop overrides */
 }
 
@@ -48,30 +48,42 @@ body{
 }
 
 h1{
-    margin-block:1.2rem;
+    margin-block:3rem;
     text-align:center;
-    font-size:2rem;
+    font-size:3rem;
     text-transform: uppercase;
     font-weight:800;
-    letter-spacing:.2em;
-    line-height: 1.9rem;
+    letter-spacing:.4em;
+    line-height: 3.25rem;
     color:var(--white);
 }
 h1 span{
     font-family: 'Libre-Italic';
-    font-size:1.65rem;
+    font-size:3rem;
     font-weight:300;
     letter-spacing:0em;
+    text-align:center;
 }
 
+/* reg post */
 #data-list li{
     padding:1rem;
-    margin-block-end:1rem;
+    margin-block-end:1.5rem;
     border: var(--1-5px) var(--gray) solid;
     background:var(--white);
     border-radius:var(--7px);
-    width:40rem;
+    width:90%;
     margin-inline:auto;
+}
+@media (768px <= width <= 1024px) {
+    #data-list li{
+        width:40rem;
+    }
+}
+@media (width > 1024px) {
+    #data-list li{
+        width:40rem;
+    }
 }
 
 .profile-header{
@@ -174,8 +186,8 @@ h1 span{
 	width: 40rem;
 	background: var(--white);
 	border: var(--1px) solid #e6ecf0;
-	border-radius: var(--14px);
-	padding: var(--14px) 1rem;
+	border-radius: var(--7px);
+	padding: 1rem;
 	box-shadow: 0 var(--7px) 1.5rem rgba(0, 0, 0, 0.15);
 
     /* transform when term modal is open */
