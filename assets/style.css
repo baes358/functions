@@ -22,7 +22,7 @@
     font-family:'Libre', sans-serif;
 
     /* colors */
-    --off-white: #e5e5e5;
+    --off-black: #222222;
     --white:#f3f3f3;
     --black:#323232;
     --gray:#c8c8c8;
@@ -42,18 +42,20 @@
 }
 
 body{
-    background:var(--off-white);
+    background:var(--off-black);
     color:var(--black);
     padding:1.5rem;
 }
 
 h1{
     margin-block:1.2rem;
+    text-align:center;
     font-size:2rem;
     text-transform: uppercase;
     font-weight:800;
     letter-spacing:.2em;
     line-height: 1.9rem;
+    color:var(--white);
 }
 h1 span{
     font-family: 'Libre-Italic';
@@ -68,6 +70,8 @@ h1 span{
     border: var(--1-5px) var(--gray) solid;
     background:var(--white);
     border-radius:var(--7px);
+    width:40rem;
+    margin-inline:auto;
 }
 
 .profile-header{
@@ -88,7 +92,7 @@ h1 span{
     font-size:1.15rem;
     font-weight:500;
     color:var(--dark-gray);
-    background:var(--off-white);
+    background:var(--off-black);
 }
 
 .profile-meta{
