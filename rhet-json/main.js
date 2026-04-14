@@ -472,6 +472,9 @@ let renderItems = (data) => {
                 if (currentKey) {
                     termHistory.push(currentKey);
                 }
+            } else if (termHistory.length === 0) {
+            // first term opened from a post becomes the base of the history
+                termHistory.push(key);
             }
 
             postInner.dataset.type = 'term';
