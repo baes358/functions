@@ -348,6 +348,44 @@ let renderItems = (data) => {
 
 
 
+    //helper function for positioning term modals
+    //reusing from getBoundingCLientRect() positioning logic with the use of classes -> then styling within CSS, rather than inline JS styles
+    let positionTermPanel = () => {
+
+        //grabbign elements
+        let postModal = document.getElementById('post-modal');
+
+        let postCard;
+        if (postModal) {
+            postCard = postModal.querySelecter('.modal-content');
+        }
+
+        let termPanel = document.querySelecter('#term-modal .modal-content');
+
+            if (postModal && !postModal.hidden && postCard && termPanel) {
+                let rect = postCard.getBoundingClientRect();
+                let gap = 8;
+
+                termPanel.classList.add('term-panel-anchor');
+                termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
+
+            } else if (termPanel) {
+
+                termPanel.classList.remove('term-panel-anchor');
+                termPanel.style.removeProperty('--term-panel-top');
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
 
 
 
