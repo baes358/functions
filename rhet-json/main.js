@@ -520,11 +520,6 @@ let renderItems = (data) => {
 
 
 
-
-            //need to insert the related terms into the modal as well
-            modalRelated.innerHTML = relatedHTML;
-
-
             //back button only for the related terms clicked on, not first term
             if (termHistory.length === 0){
                 backButton.classList.add('hidden');
@@ -626,6 +621,8 @@ let renderItems = (data) => {
         //clicking back for terms + related terms modals
         if (event.target.id === 'term-back') {
 
+            
+
             //if no history, nowhere to go back to
             if (termHistory.length === 0) return;
 
@@ -639,6 +636,9 @@ let renderItems = (data) => {
 
             
             let backButton = document.getElementById('term-back');
+            //remembering to declare modal related
+            let modalRelated = document.getElementById('modal-related');
+
 
             // add classlist hidden to the back button to hide on first term only
             if (termHistory.length === 0){
@@ -716,6 +716,8 @@ let renderItems = (data) => {
             modalRelated.innerHTML = relatedHTML;
 
 
+            //positioning the term modals using helper function
+            positionTermPanel();
 
 
 
