@@ -594,6 +594,63 @@ let renderItems = (data) => {
             document.getElementById('modal-definition').textContent = previousTerm.definition;
 
 
+
+
+
+            let related = [];
+
+            // related1
+            if (termData.related1 && termData.related1.trim().length > 0) {
+                // push to add to array
+                related.push(termData.related1.trim());
+            }
+
+            //repeat for related2
+            if (termData.related2 && termData.related2.trim().length > 0) {
+                // push to add to array
+                related.push(termData.related2.trim());
+            }
+
+            //repeat for related3
+            if (termData.related3 && termData.related3.trim().length > 0) {
+                // push to add to array
+                related.push(termData.related3.trim());
+            }
+
+
+
+            //empty string for related terms
+            let relatedHTML = '';
+
+            //loop through each related term that exists
+            related.forEach((relatedTerm) =>{
+                
+                //again need to do lowercase for lookup
+                let relatedKey = relatedTerm.toLowerCase();
+
+                //make related terms clickable as buttons
+                relatedHTML +=
+                `
+                    <li>
+                        <button class="term-link" data-term="${relatedKey}" type="button">
+                            ${relatedTerm}
+                        </button>
+                    </li>
+                `;
+            });
+
+
+
+
+
+
+
+            //need to insert the related terms into the modal as well
+            modalRelated.innerHTML = relatedHTML;
+
+
+
+
         }
 
 
