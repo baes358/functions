@@ -595,6 +595,21 @@ let renderItems = (data) => {
             //navigates to previous term user clicked on
             let previousKey = termHistory.pop();
 
+
+
+
+
+            
+            let backButton = document.getElementById('term-back');
+
+            // add classlist hidden to the back button to hide on first term only
+            if (termHistory.length === 0){
+                backButton.classList.add('hidden');
+            } else {
+                backButton.classList.remove('hidden');
+
+            }
+
             //lookup using the key
             let previousTerm = glossaryLookup[previousKey];
 
@@ -665,16 +680,6 @@ let renderItems = (data) => {
 
 
 
-
-            let backButton = document.getElementById('term-back');
-
-
-            // add classlist hidden to the back button to hide on first term only
-            if (termHistory.length === 0){
-                backButton.classList.add('hidden');
-            } else {
-                backButton.classList.remove('hidden');
-            }
 
         }
 
