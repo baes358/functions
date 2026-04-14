@@ -66,12 +66,23 @@ h1 span{
     text-align:center;
 }
 
+
+/* all posts */
+#data-list{
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+
+
+
+
 /* reg post */
 #data-list li{
     padding:1rem 0;
     margin: 0 auto;
     border: none;
-    border-bottom: var(--1px) solid var(--gray);
+    border-block-end: var(--1px) solid var(--gray);
     background:transparent;
     border-radius:var(--7px);
     width:90%;
@@ -85,6 +96,9 @@ h1 span{
     #data-list li{
         width:40rem;
     }
+}
+#data-list li:last-child {
+    border-block-end:none;
 }
 
 .profile-header{
@@ -154,10 +168,29 @@ h1 span{
 .post-stats{
     display:flex;
     flex-direction:row;
-    margin-block-start:1.5rem;
+    margin-block-start:.75rem;
     font-size:.8rem;
-    gap:.5rem;
+    gap:1rem;
+    color: var(--dark-gray);
 }
+
+
+.tweet-card {
+    cursor:default;
+
+}
+.tweet-card:hover {
+    cursor:pointer;
+    
+}
+
+
+
+
+
+
+
+
 
 
 /* post modal styling */
