@@ -354,7 +354,8 @@ let renderItems = (data) => {
     //click handler
 
     document.addEventListener('click', (event) =>{
-
+        // access back button for terms
+        let backButton = document.getElementById('term-back');
 
         //checking to see if click happened on term
         let termButton = event.target.closest('.term-link');
@@ -411,6 +412,7 @@ let renderItems = (data) => {
             let modalDefinition = document.getElementById('modal-definition');
             //related list
             let modalRelated = document.getElementById('modal-related');
+
 
 
 
@@ -480,6 +482,15 @@ let renderItems = (data) => {
 
             //need to insert the related terms into the modal as well
             modalRelated.innerHTML = relatedHTML;
+
+
+            //back button only for the related terms clicked on, not first term
+            if (termHistory.length === 0){
+                backButton.classList.add('hidden');
+            } else {
+                backButton.classList.remove('hidden');
+            }
+
 
 
             // so term layer only jumps above post modal WHEN user opens glossary from term button
