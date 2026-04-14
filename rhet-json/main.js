@@ -592,16 +592,17 @@ let renderItems = (data) => {
             });
 
 
+            modalTerm.textContent = previousTerm.term;
+            modalDefinition.textContent = previousTerm.definition;
+
+
+
             modalRelated.innerHTML = relatedHTML;
             postInner.dataset.type = 'term';
             postInner.dataset.key = previousKey;
 
 
 
-
-
-            
-            
             
             // add classlist hidden to the back button to hide on first term only
             if (termHistory.length === 0){
