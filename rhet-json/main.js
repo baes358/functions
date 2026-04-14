@@ -499,6 +499,8 @@ let renderItems = (data) => {
         //clicking back for terms + related terms modals
         if (event.target.id === 'term-back') {
 
+            let postInner = document.getElementById('post-modal-inner');
+
             
 
             //if no history, nowhere to go back to
@@ -508,16 +510,20 @@ let renderItems = (data) => {
             //navigates to previous term user clicked on
             let previousKey = termHistory.pop();
 
+            //lookup using the key
+            let previousTerm = glossaryLookup[previousKey];
 
 
+            //if it doesn't exist then stop
+            if (!previousTerm) return;
+            
+            postInner.innerHTML = buildTermInnerHTML(previousTerm);
+            postInner.dataset.key = previousKey;
 
 
             
             let backButton = document.getElementById('term-back');
-            //remembering to declare modal related
-            let modalRelated = document.getElementById('modal-related');
-
-
+            
             // add classlist hidden to the back button to hide on first term only
             if (termHistory.length === 0){
                 backButton.classList.add('hidden');
@@ -526,76 +532,12 @@ let renderItems = (data) => {
 
             }
 
-            //lookup using the key
-            let previousTerm = glossaryLookup[previousKey];
+    
 
-            //if it doesn't exist then stop
-            if (!previousTerm) return;
-
-            //update the title of the modal to the term
-            document.getElementById('modal-term').textContent = previousTerm.term;
-
-            //update the definition too
-            document.getElementById('modal-definition').textContent = previousTerm.definition;
+            return;
 
 
 
-
-
-            let related = [];
-
-            // related1
-            if (previousTerm.related1 && previousTerm.related1.trim().length > 0) {
-                // push to add to array
-                related.push(previousTerm.related1.trim());
-            }
-
-            //repeat for related2
-            if (previousTerm.related2 && previousTerm.related2.trim().length > 0) {
-                // push to add to array
-                related.push(previousTerm.related2.trim());
-            }
-
-            //repeat for related3
-            if (previousTerm.related3 && previousTerm.related3.trim().length > 0) {
-                // push to add to array
-                related.push(previousTerm.related3.trim());
-            }
-
-
-
-            //empty string for related terms
-            let relatedHTML = '';
-
-            //loop through each related term that exists
-            related.forEach((relatedTerm) =>{
-                
-                //again need to do lowercase for lookup
-                let relatedKey = relatedTerm.toLowerCase();
-
-                //make related terms clickable as buttons
-                relatedHTML +=
-                `
-                    <li>
-                        <button class="term-link" data-term="${relatedKey}" type="button">
-                            ${relatedTerm}
-                        </button>
-                    </li>
-                `;
-            });
-
-
-
-
-
-
-
-            //need to insert the related terms into the modal as well
-            modalRelated.innerHTML = relatedHTML;
-
-
-            //positioning the term modals using helper function
-            positionTermPanel();
 
 
 
