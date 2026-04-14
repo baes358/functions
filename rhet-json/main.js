@@ -567,6 +567,47 @@ let renderItems = (data) => {
         }
 
 
+
+
+
+
+        //clicking back for terms + related terms modals
+        if (event.target.id === 'term-back') {
+
+            //if no history, nowhere to go back to
+            if (termHistory.length === 0) return;
+
+            //remove most previous from stack
+            //navigates to previous term user clicked on
+            let previousKey = termHistory.pop();
+
+            //lookup using the key
+            let previousTerm = glossaryLookup[previousKey];
+
+            //if it doesn't exist then stop
+            if (!previousTerm) return;
+
+            //update the title of the modal to the term
+            document.getElementById('modal-term').textContent = previousTerm.term;
+
+            //update the definition too
+            document.getElementById('modal-definition').textContent = previousTerm.definition;
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         //need to now handle post card clicks
         let postCard = event.target.closest('#data-list .tweet-card');
 
