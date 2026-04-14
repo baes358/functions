@@ -505,11 +505,15 @@ let renderItems = (data) => {
         if (event.target.id === 'term-back') {
 
             let postInner = document.getElementById('post-modal-inner');
-
+            let backButton = document.getElementById('term-back');
             
 
             //if no history, nowhere to go back to
-            if (termHistory.length === 0) return;
+            if (termHistory.length === 0) {
+                if (backButton) backButton.classList.add('hidden');
+                
+                return;
+            }
 
             //remove most previous from stack
             //navigates to previous term user clicked on
@@ -526,8 +530,12 @@ let renderItems = (data) => {
             postInner.dataset.key = previousKey;
 
 
+
+
+
+
             
-            let backButton = document.getElementById('term-back');
+            
             
             // add classlist hidden to the back button to hide on first term only
             if (termHistory.length === 0){
