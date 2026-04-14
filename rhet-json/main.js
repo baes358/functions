@@ -98,7 +98,7 @@ let renderItems = (data) => {
         }
 
         //remember index slice(start, end) end NOT INCLUDED
-        let shortenedText = text.slice(0, maxLength) + '...';
+        let shortenedText = body.slice(0, maxLength) + '...';
 
         return shortenedText;
 
