@@ -518,6 +518,8 @@ let renderItems = (data) => {
                 `;
             });
 
+            modalRelated.innerHTML = relatedHTML;
+
 
 
 
