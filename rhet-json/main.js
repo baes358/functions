@@ -163,6 +163,45 @@ let renderItems = (data) => {
 
 
 
+    let buildTermInnerHTML = (termData) => {
+
+    let related = [];
+
+    if (termData.related1 && termData.related1.trim().length > 0) {
+        related.push(termData.related1.trim());
+    }
+    if (termData.related2 && termData.related2.trim().length > 0) {
+        related.push(termData.related2.trim());
+    }
+    if (termData.related3 && termData.related3.trim().length > 0) {
+        related.push(termData.related3.trim());
+    }
+
+    let relatedHTML = '';
+
+    related.forEach((relatedTerm) =>{
+        let relatedKey = relatedTerm.toLowerCase();
+
+        relatedHTML += 
+        `
+            <li>
+                <button class="term-link" data-term="${relatedKey}" type="button">
+                    ${relatedTerm}
+                </button>
+            </li>
+        `;
+    });
+
+    return `
+            <button id="term-back">← Back</button>
+
+            <h2>${termData.term}</h2>
+            <p>${termData.definition}</p>
+
+            <h3>Related Terms</h3>
+            <ul>${relatedHTML}</ul>
+        `;
+    };
 
 
     // function for opening a post
@@ -413,165 +452,44 @@ let renderItems = (data) => {
             //find the matching glossary item from lookup
             let termData = glossaryLookup[key];
 
-            let modal = document.getElementById('term-modal');
-
-            if (!modal.hidden){
-                let currentTerm = document.getElementById('modal-term').textContent;
-                if(currentTerm){
-                    termHistory.push(currentTerm.toLowerCase());
-                }
-            }
-
-           
-
-            // if there is no matching glossary term then just stop
             if (!termData) return;
 
-
-
+            let postInner = document.getElementById('post-modal-inner');
             // first need to grab the id for the post modal
             // grabbing post modal so that it adds class for bump transition with term modal
             let postModal = document.getElementById('post-modal');
-            
-            if (postModal && postModal.hidden === false) {
-                let postCard = postModal.querySelector('.modal-content');
-                if (postCard) {
-                    postCard.classList.add('is-bumped');
+
+
+
+            // store history ONLY if already viewing a term
+            if (postInner.dataset.type === 'term') {
+                let currentKey = postInner.dataset.key;
+                if (currentKey) {
+                    termHistory.push(currentKey);
                 }
             }
-            
 
 
+            // render term inside SAME modal, not multiple
+            postInner.innerHTML = buildTermInnerHTML(termData);
 
+            postInner.dataset.type = 'term';
+            postInner.dataset.key = key;
 
+            postModal.hidden = false;
 
+            // handle the back button now
+            let backButton = document.getElementById('term-back');
 
-
-
-            //backdrop for modal
-            
-            //title element
-            let modalTerm = document.getElementById('modal-term');
-            //definition 
-            let modalDefinition = document.getElementById('modal-definition');
-            //related list
-            let modalRelated = document.getElementById('modal-related');
-
-
-
-
-            // put the term TEXT into the modal heading
-            modalTerm.textContent = termData.term;
-            // put term DEF into modal definition spot
-            modalDefinition.textContent = termData.definition;
-
-
-
-            // building an array for the existing related terms
-            // asked claude how I would approach related terms for those that have either two or three related 
-            // suggested using the .length() property to check
-            // conversation: https://claude.ai/share/02377e0b-47d9-41ab-b4f5-e94a7832c9c2
-            let related = [];
-
-
-            // check to see if not just whitespace and not empty
-            if (termData.related1 && termData.related1.trim().length > 0) {
-                // push to add to array
-                related.push(termData.related1.trim());
-            }
-
-            //repeat for related2
-            if (termData.related2 && termData.related2.trim().length > 0) {
-                // push to add to array
-                related.push(termData.related2.trim());
-            }
-
-            //repeat for related3
-            if (termData.related3 && termData.related3.trim().length > 0) {
-                // push to add to array
-                related.push(termData.related3.trim());
-            }
-
-
-
-
-
-
-
-            //empty string for related terms
-            let relatedHTML = '';
-
-            //loop through each related term that exists
-            related.forEach((relatedTerm) =>{
-                
-                //again need to do lowercase for lookup
-                let relatedKey = relatedTerm.toLowerCase();
-
-                //make related terms clickable as buttons
-                relatedHTML +=
-                `
-                    <li>
-                        <button class="term-link" data-term="${relatedKey}" type="button">
-                            ${relatedTerm}
-                        </button>
-                    </li>
-                `;
-            });
-
-            modalRelated.innerHTML = relatedHTML;
-
-
-
-
-
-
-            //back button only for the related terms clicked on, not first term
             if (termHistory.length === 0){
                 backButton.classList.add('hidden');
             } else {
                 backButton.classList.remove('hidden');
             }
 
-
-
-            // so term layer only jumps above post modal WHEN user opens glossary from term button
-            modal.classList.add('term-front');
-
-
-
-            //MAKE MODAL VISIBLE!!! because remember set at hidden
-
-            modal.hidden = false;
-
-
-
-
-            // asked claude if there is a way to retrieve the size and position of an element relative to the viewport
-            // also asked about styling within the parameters of getBoundingClientRect(), which apparently is better for dynamic styling whereas CSS styling is more static
-            // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
-
-            positionTermPanel();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             return;
-
-
-    
-
         }
+
 
 
 
