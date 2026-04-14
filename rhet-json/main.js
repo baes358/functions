@@ -374,10 +374,11 @@ let renderItems = (data) => {
 
             let modal = document.getElementById('term-modal');
 
-            let currentTerm = document.getElementById('modal-term').textContent;
-
-            if (!modal.hidden && currentTerm){
-                termHistory.push(currentTerm.toLowerCase());
+            if (!modal.hidden){
+                let currentTerm = document.getElementById('modal-term').textContent;
+                if(currentTerm){
+                    termHistory.push(currentTerm.toLowerCase());
+                }
             }
 
            
