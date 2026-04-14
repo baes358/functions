@@ -546,10 +546,14 @@ let renderItems = (data) => {
 
             let postInner = document.getElementById('post-modal-inner');
             let backButton = document.getElementById('term-back');
+
+            let modalTerm = document.getElementById('modal-term');
+            let modalDefinition = document.getElementById('modal-definition');
+            let modalRelated = document.getElementById('modal-related');
             
 
-            //if no history, nowhere to go back to
-            if (termHistory.length === 0) {
+            //need at least 2 items to go back - the current and the previous
+            if (termHistory.length <= -1) {
                 if (backButton) backButton.classList.add('hidden');
 
                 return;
@@ -557,7 +561,19 @@ let renderItems = (data) => {
 
             //remove most previous from stack
             //navigates to previous term user clicked on
-            let previousKey = termHistory.pop();
+            // let previousKey = termHistory.pop();
+
+
+            // use currentkey within the dataset key
+            let currentKey = postInner.dataset.key;
+            // if it matches the top, remove it from the history
+
+            if(termHistory[termHistory.length - 1] === currentKey){
+                termHistory.pop();
+            }
+
+            //now previous term is in new top of stack
+            let previousKey = termHistory[termHistory.length - 1];
 
             //lookup using the key
             let previousTerm = glossaryLookup[previousKey];
