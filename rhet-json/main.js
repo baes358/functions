@@ -357,22 +357,25 @@ let renderItems = (data) => {
 
         let postCard;
         if (postModal) {
-            postCard = postModal.querySelecter('.modal-content');
+            postCard = postModal.querySelector('.modal-content');
         }
 
-        let termPanel = document.querySelecter('#term-modal .modal-content');
+        let termPanel = document.querySelector('#term-modal .modal-content');
 
-            if (postModal && !postModal.hidden && postCard && termPanel) {
-                let rect = postCard.getBoundingClientRect();
-                let gap = 8;
+        // asked claude if there is a way to retrieve the size and position of an element relative to the viewport
+        // also asked about styling within the parameters of getBoundingClientRect(), which apparently is better for dynamic styling whereas CSS styling is more static
+        // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
+        if (postModal && !postModal.hidden && postCard && termPanel) {
+            let rect = postCard.getBoundingClientRect();
+            let gap = 8;
 
-                termPanel.classList.add('term-panel-anchor');
-                termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
+            termPanel.classList.add('term-panel-anchor');
+            termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
 
-            } else if (termPanel) {
+        } else if (termPanel) {
 
-                termPanel.classList.remove('term-panel-anchor');
-                termPanel.style.removeProperty('--term-panel-top');
+            termPanel.classList.remove('term-panel-anchor');
+            termPanel.style.removeProperty('--term-panel-top');
         }
 
 
@@ -545,52 +548,7 @@ let renderItems = (data) => {
             // also asked about styling within the parameters of getBoundingClientRect(), which apparently is better for dynamic styling whereas CSS styling is more static
             // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
 
-            let postCard = postModal.querySelector('.modal-content');
-            let termPanel = document.querySelector('#term-modal .modal-content');
-
-            if (postModal && postModal.hidden === false && postCard && termPanel) {
-
-                let rect = postCard.getBoundingClientRect();
-
-                let gap = 8;
-
-                //move inline js styles to css by using class names
-                termPanel.classList.add('term-panel-anchor');
-                
-                // asked how i can set custom css variables from within javascript -> use setProperty(-- , value)
-                // same conversation from above!
-                termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
-
-                // css styling within
-                // termPanel.style.position = 'fixed';
-                // termPanel.style.top = (rect.bottom + gap) + 'px';
-                // termPanel.style.left = '50%';
-                // termPanel.style.transform = 'translateX(-50%)';
-                // termPanel.style.width = 'min(40rem, calc(100vw - 2rem))';
-                // termPanel.style.marginBlockEnd = '0';
-                // termPanel.style.overflow = 'auto';
-
-            } else if (termPanel) {
-
-                termPanel.classList.remove('term-panel-anchor');
-                termPanel.style.removeProperty('--term-panel-top');
-
-
-
-
-
-
-                // clearing inline styles here in conditional statement so that term modal is centered when post modal does not exist
-                // termPanel.style.position = '';
-                // termPanel.style.top = '';
-                // termPanel.style.left = '';
-                // termPanel.style.transform = '';
-                // termPanel.style.width = '';
-                // termPanel.style.marginBlockEnd = '';
-                // termPanel.style.overflow = '';
-            }
-
-
+            positionTermPanel();
 
 
 
