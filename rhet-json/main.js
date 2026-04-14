@@ -85,9 +85,29 @@ let renderItems = (data) => {
 
 
 
+    let shortenHTML = (bodyString, maxLength = 125) => {
+        let temp = document.createElement('section');
+
+        temp.innerHTML = bodyString;
+
+        //return all text inside temp or inner visual text 
+        let body = temp.textContent || temp.innerText;
+
+        if (body.length <= maxLength){
+            return bodyString;
+        }
+
+        //remember index slice(start, end) end NOT INCLUDED
+        let shortenedText = text.slice(0, maxLength) + '...';
+
+        return shortenedText;
 
 
-    // function to build post card html!!!! TODO
+    }
+
+
+
+    // function to build post card html!!!! 
     let buildPostCardInnerHTML = (postData) => {
 	    let clickableBody = makeClickableTerms(postData.body);
 
@@ -220,6 +240,7 @@ let renderItems = (data) => {
 
         //convert [[terms]] into clickable buttons
         let clickableBody = makeClickableTerms(item.body);
+        let shortenedBody = shortenHTML(clickableBody, 125);
 
         // build post HTML using template lit
         let listItem =
@@ -240,7 +261,7 @@ let renderItems = (data) => {
 
                     </section>
 
-                    <p class="post-body">${clickableBody}</p>
+                    <p class="post-body">${shortenedBody}</p>
 
                     <section class="post-stats">
                         <p class="likes">❤️ ${item.likes}</p>
