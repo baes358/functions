@@ -475,15 +475,46 @@ let renderItems = (data) => {
             }
 
 
-            // render term inside SAME modal, not multiple
-            postInner.innerHTML = buildTermInnerHTML(termData);
+            let modal = document.getElementById('term-modal');
 
-            postInner.dataset.type = 'term';
-            postInner.dataset.key = key;
+            let modalTerm = document.getElementById('modal-term');
+            let modalDefinition = document.getElementById('modal-definition');
+            let modalRelated = document.getElementById('modal-related');
 
-            postModal.hidden = false;
+            // fill content
+            modalTerm.textContent = termData.term;
+            modalDefinition.textContent = termData.definition;
 
-            // handle the back button now
+
+            let related = [];
+
+            if (termData.related1 && termData.related1.trim().length > 0) {
+                related.push(termData.related1.trim());
+            }
+            if (termData.related2 && termData.related2.trim().length > 0) {
+                related.push(termData.related2.trim());
+            }
+            if (termData.related3 && termData.related3.trim().length > 0) {
+                related.push(termData.related3.trim());
+            }
+
+            let relatedHTML = '';
+
+            related.forEach((relatedTerm) =>{
+                let relatedKey = relatedTerm.toLowerCase();
+
+                relatedHTML += `
+                    <li>
+                        <button class="term-link" data-term="${relatedKey}" type="button">
+                            ${relatedTerm}
+                        </button>
+                    </li>
+                `;
+            });
+
+            modalRelated.innerHTML = relatedHTML;
+
+            modal.hidden = false;
             let backButton = document.getElementById('term-back');
 
             if (termHistory.length === 0){
@@ -492,7 +523,10 @@ let renderItems = (data) => {
                 backButton.classList.remove('hidden');
             }
 
-            return;
+            positionTermPanel();
+
+
+
         }
 
 
@@ -511,7 +545,7 @@ let renderItems = (data) => {
             //if no history, nowhere to go back to
             if (termHistory.length === 0) {
                 if (backButton) backButton.classList.add('hidden');
-                
+
                 return;
             }
 
