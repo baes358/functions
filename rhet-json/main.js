@@ -130,11 +130,17 @@ let renderItems = (data) => {
             '</section>' +
             '<p class="post-body">' + clickableBody + '</p>' +
             '<section class="post-stats">' +
-                '<p class="likes">❤️ ' + postData.likes + '</p>' +
-                '<p class="divider"> • </p>' +
-                '<p class="reposts">🔁 ' + postData.reposts + '</p>' +
-                '<p class="divider"> • </p>' +
-                '<p class="reposts">💬 ' + postData.comments + '</p>' +
+                '<p class="likes">' +
+                    '<img src="./assets/icons/like.svg" class="icon"/>' + postData.likes + 
+                '</p>' +
+                
+                '<p class="reposts">' +
+                    '<img src="./assets/icons/repost.svg" class="icon"/>' + postData.reposts + 
+                '</p>' +
+                
+                '<p class="reposts">' +
+                   '<img src="./assets/icons/comment.svg" class="icon"/>' + postData.comments + 
+                '</p>' +
 
             '</section>'
         );
@@ -264,11 +270,18 @@ let renderItems = (data) => {
                     <p class="post-body">${shortenedBody}</p>
 
                     <section class="post-stats">
-                        <p class="likes">❤️ ${item.likes}</p>
-                        <p class="divider"> • </p>
-                        <p class="reposts">🔁 ${item.reposts}</p>
-                        <p class="divider"> • </p>
-                        <p class="reposts">💬 ${item.comments}</p>
+
+                        <p class="likes">
+                            <img src="./assets/icons/like.svg" class="icon" />${item.likes}
+                        </p>
+                        
+                        <p class="reposts">
+                            <img src="./assets/icons/repost.svg" class="icon" />${item.reposts}
+                        </p>
+                        
+                        <p class="comments">
+                            <img src="./assets/icons/comment.svg" class="icon" />${item.comments}
+                        </p>
                     </section>
     
                 </li>
