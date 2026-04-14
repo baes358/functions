@@ -184,9 +184,19 @@ h1 span{
     
 }
 
+.stat{
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+}
 
-
-
+.icon{
+    width:1rem;
+    height:1rem;
+    display:block;
+    /* margin-inline-end:.5rem;
+    margin-block-start:.5rem; */
+}
 
 
 

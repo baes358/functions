@@ -130,15 +130,15 @@ let renderItems = (data) => {
             '</section>' +
             '<p class="post-body">' + clickableBody + '</p>' +
             '<section class="post-stats">' +
-                '<p class="likes">' +
+                '<p class="stat">' +
                     '<img src="./assets/icons/like.svg" class="icon"/>' + postData.likes + 
                 '</p>' +
                 
-                '<p class="reposts">' +
+                '<p class="stat">' +
                     '<img src="./assets/icons/repost.svg" class="icon"/>' + postData.reposts + 
                 '</p>' +
                 
-                '<p class="reposts">' +
+                '<p class="stat">' +
                    '<img src="./assets/icons/comment.svg" class="icon"/>' + postData.comments + 
                 '</p>' +
 
@@ -271,15 +271,15 @@ let renderItems = (data) => {
 
                     <section class="post-stats">
 
-                        <p class="likes">
+                        <p class="stat">
                             <img src="./assets/icons/like.svg" class="icon" />${item.likes}
                         </p>
                         
-                        <p class="reposts">
+                        <p class="stat">
                             <img src="./assets/icons/repost.svg" class="icon" />${item.reposts}
                         </p>
                         
-                        <p class="comments">
+                        <p class="stat">
                             <img src="./assets/icons/comment.svg" class="icon" />${item.comments}
                         </p>
                     </section>
