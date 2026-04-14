@@ -380,10 +380,7 @@ let renderItems = (data) => {
                 termHistory.push(currentTerm.toLowerCase());
             }
 
-            if(currentTerm){
-                //add to currentTerm
-                termHistory.push(currentTerm.toLowerCase());
-            }
+           
 
             // if there is no matching glossary term then just stop
             if (!termData) return;
@@ -618,19 +615,19 @@ let renderItems = (data) => {
             // related1
             if (previousTerm.related1 && previousTerm.related1.trim().length > 0) {
                 // push to add to array
-                related.push(termData.related1.trim());
+                related.push(previousTerm.related1.trim());
             }
 
             //repeat for related2
             if (previousTerm.related2 && previousTerm.related2.trim().length > 0) {
                 // push to add to array
-                related.push(termData.related2.trim());
+                related.push(previousTerm.related2.trim());
             }
 
             //repeat for related3
             if (previousTerm.related3 && previousTerm.related3.trim().length > 0) {
                 // push to add to array
-                related.push(termData.related3.trim());
+                related.push(previousTerm.related3.trim());
             }
 
 
@@ -666,6 +663,17 @@ let renderItems = (data) => {
 
 
 
+
+
+            let backButton = document.getElementById('term-back');
+
+
+            // add classlist hidden to the back button to hide on first term only
+            if (termHistory.length === 0){
+                backButton.classList.add('hidden');
+            } else {
+                backButton.classList.remove('hidden');
+            }
 
         }
 
