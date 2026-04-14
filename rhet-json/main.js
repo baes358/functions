@@ -36,6 +36,21 @@ let renderItems = (data) => {
         postsLookup[String(post.id)] = post;
     });
 
+
+
+    // for storing relatedterms allowing users to navigate back
+    let termHistory = [];
+
+
+
+
+
+
+
+
+
+
+
     // asked claude to clarify what the differences between .split(), .trim(), .slice() to use within my data
     // conversation: https://claude.ai/share/3ce87fcf-b4c8-483d-8803-c24e00251991
 
@@ -357,6 +372,12 @@ let renderItems = (data) => {
             let termData = glossaryLookup[key];
 
 
+            let currentTerm = document.getElementById('modal-term').textContent;
+
+            if(currentTerm){
+                //add to currentTerm
+                termHistory.push(currentTerm.toLowerCase());
+            }
 
             // if there is no matching glossary term then just stop
             if (!termData) return;
