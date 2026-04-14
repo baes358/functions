@@ -6,7 +6,7 @@
             "topic": "Economy",
             "definition": "A tax placed on imported goods by the government. Meant to protect domestic industries by making foreign products more expensive, which usually often raises prices for consumers as well.",
             "related1": "trade deficit",
-            "related2": "protectionism"
+            "related2": "gdp"
         },
         {
             "id": "trade deficit",

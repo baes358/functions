@@ -372,8 +372,13 @@ let renderItems = (data) => {
             //find the matching glossary item from lookup
             let termData = glossaryLookup[key];
 
+            let modal = document.getElementById('term-modal');
 
             let currentTerm = document.getElementById('modal-term').textContent;
+
+            if (!modal.hidden && currentTerm){
+                termHistory.push(currentTerm.toLowerCase());
+            }
 
             if(currentTerm){
                 //add to currentTerm
@@ -405,7 +410,7 @@ let renderItems = (data) => {
 
 
             //backdrop for modal
-            let modal = document.getElementById('term-modal');
+            
             //title element
             let modalTerm = document.getElementById('modal-term');
             //definition 
@@ -611,19 +616,19 @@ let renderItems = (data) => {
             let related = [];
 
             // related1
-            if (termData.related1 && termData.related1.trim().length > 0) {
+            if (previousTerm.related1 && previousTerm.related1.trim().length > 0) {
                 // push to add to array
                 related.push(termData.related1.trim());
             }
 
             //repeat for related2
-            if (termData.related2 && termData.related2.trim().length > 0) {
+            if (previousTerm.related2 && previousTerm.related2.trim().length > 0) {
                 // push to add to array
                 related.push(termData.related2.trim());
             }
 
             //repeat for related3
-            if (termData.related3 && termData.related3.trim().length > 0) {
+            if (previousTerm.related3 && previousTerm.related3.trim().length > 0) {
                 // push to add to array
                 related.push(termData.related3.trim());
             }
