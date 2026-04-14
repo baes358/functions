@@ -219,6 +219,11 @@ let renderItems = (data) => {
 
         postInner.innerHTML = buildPostCardInnerHTML(postData);
 
+        //store current state of showing post or term to reset navigation for back button behavior reset
+        postInner.dataset.type = 'post';
+        postInner.dataset.key = '';
+        termHistory = [];
+
         postInner.classList.add('tweet-card');
         
     
