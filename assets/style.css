@@ -231,3 +231,14 @@ h1 span{
 #term-modal[hidden] {
 	display: none !important;
 }
+
+
+.term-panel-anchor {
+    position: fixed;
+    top: var(--term-panel-top);
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(40rem, calc(100vw - 2rem));
+    margin-block-end: 0;
+    overflow: auto;
+}
