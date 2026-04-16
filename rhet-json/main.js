@@ -196,6 +196,7 @@ let renderItems = (data) => {
                 <button id="term-back">← Back</button>
 
                 <h2>${termData.term}</h2>
+                <p>${termData.topic}</p>
                 <p>${termData.definition}</p>
 
                 <h3>Related Terms</h3>
@@ -472,10 +473,8 @@ let renderItems = (data) => {
                 if (currentKey) {
                     termHistory.push(currentKey);
                 }
-            } else if (termHistory.length === 0) {
-            // first term opened from a post becomes the base of the history
-                termHistory.push(key);
-            }
+            } 
+            
 
             postInner.dataset.type = 'term';
             postInner.dataset.key = key;
@@ -484,11 +483,13 @@ let renderItems = (data) => {
             let modal = document.getElementById('term-modal');
 
             let modalTerm = document.getElementById('modal-term');
+            let modalTopic = document.getElementById('modal-topic');
             let modalDefinition = document.getElementById('modal-definition');
             let modalRelated = document.getElementById('modal-related');
 
             // fill content
             modalTerm.textContent = termData.term;
+            modalTopic.textContent = termData.topic;
             modalDefinition.textContent = termData.definition;
 
 
