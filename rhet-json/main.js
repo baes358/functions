@@ -1,7 +1,30 @@
 
 
+// asked Claude of specific Math methods within Javascript to help me shuffle the li elements (posts)
+// claude conversation: https://claude.ai/share/18d9ec65-1005-4953-9d0e-2d3405e4f6aa
+let shufflePosts = (posts) => {
+    // make copy so it doesn’t change original list
+    let shuffledPosts = posts.slice();
 
+    // go through each position in the array, starting from the end
+    for (let currentIndex = shuffledPosts.length - 1; currentIndex > 0; currentIndex--) {
 
+        //take random position from the start up to the current position
+        //Math.floor rounds number down
+        //Math.random gives random decimal
+        let randomIndex = Math.floor(Math.random() * (currentIndex + 1));
+
+        // swap current item with random item
+        let currentItem = shuffledPosts[currentIndex];
+        let randomItem = shuffledPosts[randomIndex];
+
+        shuffledPosts[currentIndex] = randomItem;
+        shuffledPosts[randomIndex] = currentItem;
+    }
+
+    // return shuffled result
+    return shuffledPosts;
+}
 
 
 
@@ -577,7 +600,7 @@ let renderItems = (data) => {
             //now previous term is in new top of stack
             // let previousKey = termHistory[termHistory.length - 1];
 
-            
+
             // if nothing to go back to
             if (!previousKey) {
                 if (backButton) backButton.classList.add('hidden');
@@ -776,4 +799,14 @@ fetch('./rhet-json/data.json')
 	.then(data => {
 		// And passes the data to the function, above!
 		renderItems(data);
+
+
+
+
+
+
+        let refreshBtn = document.getElementById('refresh-btn');
+
+        
+
 	});
