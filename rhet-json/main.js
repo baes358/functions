@@ -554,11 +554,11 @@ let renderItems = (data) => {
             
 
             //need at least 2 items to go back - the current and the previous
-            if (termHistory.length <= -1) {
-                if (backButton) backButton.classList.add('hidden');
+            // if (termHistory.length <= -1) {
+            //     if (backButton) backButton.classList.add('hidden');
 
-                return;
-            }
+            //     return;
+            // }
 
             //remove most previous from stack
             //navigates to previous term user clicked on
@@ -566,15 +566,25 @@ let renderItems = (data) => {
 
 
             // use currentkey within the dataset key
-            let currentKey = postInner.dataset.key;
+            // let currentKey = postInner.dataset.key;
             // if it matches the top, remove it from the history
 
-            if(termHistory[termHistory.length - 1] === currentKey){
-                termHistory.pop();
-            }
+            // if(termHistory[termHistory.length - 1] === currentKey){
+            //     termHistory.pop();
+            // }
 
             //now previous term is in new top of stack
-            let previousKey = termHistory[termHistory.length - 1];
+            // let previousKey = termHistory[termHistory.length - 1];
+
+
+            // popping the previous term from the stack
+            let previousKey = termHistory.pop();
+
+            // if nothing to go back to
+            if (!previousKey) {
+                if (backButton) backButton.classList.add('hidden');
+                return;
+            }
 
             //lookup using the key
             let previousTerm = glossaryLookup[previousKey];
@@ -582,7 +592,15 @@ let renderItems = (data) => {
 
             //if it doesn't exist then stop
             if (!previousTerm) return;
-            
+        
+
+
+
+
+
+
+
+
 
             let related = [];
 
@@ -625,6 +643,7 @@ let renderItems = (data) => {
 
             
             // add classlist hidden to the back button to hide on first term only
+            // when user presses back to first term, termHistory still has first term sttored in
             if (termHistory.length === 0){
                 backButton.classList.add('hidden');
             } else {
