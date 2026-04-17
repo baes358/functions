@@ -133,7 +133,7 @@ h1 span{
 
 .profile-header{
     display:flex;
-    padding-block-end:.5rem;
+    padding-block:.5rem;
     border: none;
 }
 
@@ -254,7 +254,7 @@ h1 span{
 	background: rgba(0, 0, 0, 0.1);
 	display: flex;
     align-items: flex-start;
-	padding-block-start: 5rem;
+	padding-block-start: 7rem;
 	padding-inline: 1rem;
 	padding-block-end: 1rem;
 	justify-content: center;
@@ -321,7 +321,7 @@ h1 span{
 }
 
 #post-modal .modal-content.is-bumped {
-	transform: translateY(-12vh);
+	transform: translateY(-5vh);
 }
 
 #post-modal-close{

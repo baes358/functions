@@ -435,7 +435,7 @@ let renderItems = (data) => {
         // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
         if (postModal && !postModal.hidden && postCard && termPanel) {
             let rect = postCard.getBoundingClientRect();
-            let gap = 16;
+            let gap = 8;
 
             termPanel.classList.add('term-panel-anchor');
             termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
@@ -487,6 +487,13 @@ let renderItems = (data) => {
             // first need to grab the id for the post modal
             // grabbing post modal so that it adds class for bump transition with term modal
             let postModal = document.getElementById('post-modal');
+
+            
+            let postCard = postModal.querySelector('.modal-content');
+
+            if (postCard) {
+                postCard.classList.add('is-bumped');
+            }
 
 
 
