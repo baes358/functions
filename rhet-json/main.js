@@ -807,6 +807,25 @@ fetch('./rhet-json/data.json')
 
         let refreshBtn = document.getElementById('refresh-btn');
 
-        
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', () => {
+                // object shuffledData
+                let shuffledData = {
+                    // copy all properties from the original data object
+                    // posts, glossary, etc
+                    // asked claude if there is an operator to copy all data without manually calling
+                    // ... spread operator
+                    // conversation: https://claude.ai/share/18d9ec65-1005-4953-9d0e-2d3405e4f6aa
+                    ...data,
+
+                    // override Posts property with a shuffled version
+                    // take the original posts, shuffle them, assign result
+    
+                    Posts: shufflePosts(data.Posts)
+                };
+
+                renderItems(shuffledData);
+            });
+        }
 
 	});
