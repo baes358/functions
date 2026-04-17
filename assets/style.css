@@ -38,6 +38,7 @@
     --2px: .125rem;
     --7px:0.438rem;
     --14px: 0.875rem;
+    --20px: 1.25rem;
     --25px: 1.56rem;
     --50px: 3.125rem;
     --999px: 50rem;
@@ -81,13 +82,13 @@ h1 span{
 
 /* reg post */
 #data-list li{
-    padding:1rem 0;
+    padding:1.75rem;
     margin: 0 auto;
-    border: none;
-    border-block-end: var(--1px) solid var(--gray);
-    background:transparent;
-    border-radius:var(--7px);
+    border: var(--2px) solid var(--gray);
+    border-radius:var(--20px);
     width:90%;
+    margin-block-end:1rem;
+    background:var(--white);
 }
 @media (768px <= width <= 1024px) {
     #data-list li{
@@ -100,12 +101,16 @@ h1 span{
     }
 }
 #data-list li:last-child {
-    border-block-end:none;
+    /* border-block-end:none; */
+}
+
+#data-list li:hover{
+    scale: 105%;
+    filter: drop-shadow(.2rem .2rem .3px var(--black));
 }
 
 .profile-header{
     display:flex;
-    gap: 0.75rem;
     padding-block-end:.5rem;
     border: none;
 }
@@ -152,6 +157,10 @@ h1 span{
     line-height:1.5rem;
     font-weight:400;
     letter-spacing:.02ch;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.2);
+    mask-image: linear-gradient(to bottom, black, transparent);
+    
 }
 
 
@@ -186,6 +195,7 @@ h1 span{
 
 }
 .tweet-card:hover {
+
     cursor:pointer;
     
 }
@@ -219,7 +229,7 @@ h1 span{
 #post-modal {
 	position: fixed;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.08);
+	background: rgba(0, 0, 0, 0.1);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -242,14 +252,30 @@ h1 span{
 
     width: 40rem;
 	background: var(--white);
-	border: var(--1-5px) solid #ccc;
+	border: var(--2px) solid var(--dark-gray);
 	border-radius: var(--25px);
 	padding: 2rem;
     cursor:pointer;
 
+
+
+
+    
+
     /* transform when term modal is open */
     transition: transform 0.35s ease;
 	will-change: transform;
+
+    
+
+}
+
+#post-modal .modal-content .post-body{
+    backdrop-filter: blur(0px);
+    background: var(--white);
+    mask-image: linear-gradient(to bottom, black, black);
+    
+
 }
 
 #post-modal .modal-content.is-bumped {
@@ -296,7 +322,7 @@ h1 span{
 	width: 80%;
     /* width: 40rem; */
 	background: var(--white);
-	border: var(--1-5px) solid #ccc;
+	border: var(--2px) solid var(--gray);
 	border-radius: var(--25px);
 }
 #modal-close{
@@ -337,7 +363,7 @@ h1 span{
 .term-header{
     display:flex;
     flex-direction:row;
-    margin-block:1rem;
+    margin-block:1.5rem 1rem;
 }
 #modal-term{
     
@@ -360,10 +386,21 @@ h1 span{
     letter-spacing:.02ch;
 }
 
+h3{
+    font-style: italic;
+    color:var(--dark-gray);
+    font-weight: 500;
+    margin-block:.75rem .25rem;
+}
+
 
 #modal-related{
     display:flex;
     flex-direction:row;
+    gap:.5rem;
+}
+#modal-related li{
+    
 }
 
 .term-panel-anchor {
