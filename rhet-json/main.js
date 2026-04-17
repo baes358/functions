@@ -562,7 +562,8 @@ let renderItems = (data) => {
 
             //remove most previous from stack
             //navigates to previous term user clicked on
-            // let previousKey = termHistory.pop();
+            // popping the previous term from the stack
+            let previousKey = termHistory.pop();
 
 
             // use currentkey within the dataset key
@@ -576,10 +577,7 @@ let renderItems = (data) => {
             //now previous term is in new top of stack
             // let previousKey = termHistory[termHistory.length - 1];
 
-
-            // popping the previous term from the stack
-            let previousKey = termHistory.pop();
-
+            
             // if nothing to go back to
             if (!previousKey) {
                 if (backButton) backButton.classList.add('hidden');
