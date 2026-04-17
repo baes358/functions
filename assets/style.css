@@ -253,10 +253,13 @@ h1 span{
 	inset: 0;
 	background: rgba(0, 0, 0, 0.1);
 	display: flex;
-	align-items: center;
+    align-items: flex-start;
+	padding-block-start: 10rem;
+	padding-inline: 1rem;
+	padding-block-end: 1rem;
 	justify-content: center;
     /* 16px - 1rem */
-	padding: 1rem;
+	/* padding: 1rem; */
 	z-index: 900;
 
 
@@ -272,7 +275,7 @@ h1 span{
 #post-modal .modal-content {
 	
 
-    width: 40rem;
+    width: min(40rem, 90vw);
 	background: var(--white);
 	border: var(--2px) solid var(--dark-gray);
 	border-radius: var(--25px);
@@ -340,8 +343,7 @@ h1 span{
 	border: var(--1-5px) var(--gray) solid;
 	border-radius: var(--7px);
 	padding: 2rem;
-	max-width: 40rem;
-	width: 80%;
+	width: min(40rem, 90vw);
     /* width: 40rem; */
 	background: var(--white);
 	border: var(--1-5px) solid var(--dark-gray);
