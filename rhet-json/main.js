@@ -435,7 +435,7 @@ let renderItems = (data) => {
         // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
         if (postModal && !postModal.hidden && postCard && termPanel) {
             let rect = postCard.getBoundingClientRect();
-            let gap = 8;
+            let gap = 16;
 
             termPanel.classList.add('term-panel-anchor');
             termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);

@@ -254,7 +254,7 @@ h1 span{
 	background: rgba(0, 0, 0, 0.1);
 	display: flex;
     align-items: flex-start;
-	padding-block-start: 10rem;
+	padding-block-start: 5rem;
 	padding-inline: 1rem;
 	padding-block-end: 1rem;
 	justify-content: center;
@@ -265,6 +265,23 @@ h1 span{
 
     
 }
+
+
+@media (768px <= width <= 1024px) {
+    #post-modal {
+        padding-block-start: 10rem;
+    }
+}
+
+@media (width > 1024px) {
+    #post-modal {
+        padding-block-start: 10rem;
+    }
+
+}
+
+
+
 
 /* Hidden state support */
 #post-modal[hidden] {
@@ -396,6 +413,7 @@ h1 span{
 }
 
 #modal-topic{
+    display:block;
     padding:.25rem .5rem;
     background:var(--gray);
     border-radius:var(--7px);
@@ -421,6 +439,7 @@ h3{
 #modal-related{
     display:flex;
     flex-direction:row;
+    flex-wrap: wrap;
     gap:.5rem;
 }
 #modal-related li{
@@ -436,3 +455,4 @@ h3{
     margin-block-end: 0;
     overflow: auto;
 }
+
