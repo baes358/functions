@@ -1,4 +1,20 @@
+// default home filter
+let activeFilter = "All";
 
+let filterFeed = () => {
+
+    let items = document.querySelectorAll('#data-list li');
+
+    items.forEach((li) => {
+        // check if showing all items OR the item's topic matches the active filter
+        if (activeFilter === "All" || li.dataset.topic === activeFilter) {
+            //show item -> empty string is default display
+            li.style.display = "";
+        } else {
+            li.style.display = "none";
+        }
+    });
+};
 
 // asked Claude of specific Math methods within Javascript to help me shuffle the li elements (posts)
 // claude conversation: https://claude.ai/share/18d9ec65-1005-4953-9d0e-2d3405e4f6aa
@@ -334,7 +350,7 @@ let renderItems = (data) => {
         // build post HTML using template lit
         let listItem =
             `
-                <li class="tweet-card" data-post-id="${item.id}">
+                <li class="tweet-card" data-post-id="${item.id}" data-topic="${item.topic}">
                     <section class="profile-header">
                         <section class="initials">${item.initials}</section>
 
