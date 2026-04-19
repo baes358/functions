@@ -828,27 +828,75 @@ fetch('./rhet-json/data.json')
 
 
 
-        let refreshBtn = document.getElementById('refresh-btn');
+        // let refreshBtn = document.getElementById('refresh-btn');
 
-        if (refreshBtn) {
-            refreshBtn.addEventListener('click', () => {
-                // object shuffledData
-                let shuffledData = {
-                    // copy all properties from the original data object
-                    // posts, glossary, etc
-                    // asked claude if there is an operator to copy all data without manually calling
-                    // ... spread operator
-                    // conversation: https://claude.ai/share/18d9ec65-1005-4953-9d0e-2d3405e4f6aa
-                    ...data,
+        // if (refreshBtn) {
+        //     refreshBtn.addEventListener('click', () => {
+        //         // object shuffledData
+        //         let shuffledData = {
+        //             // copy all properties from the original data object
+        //             // posts, glossary, etc
+        //             // asked claude if there is an operator to copy all data without manually calling
+        //             // ... spread operator
+        //             // conversation: https://claude.ai/share/18d9ec65-1005-4953-9d0e-2d3405e4f6aa
+        //             ...data,
 
-                    // override Posts property with a shuffled version
-                    // take the original posts, shuffle them, assign result
+        //             // override Posts property with a shuffled version
+        //             // take the original posts, shuffle them, assign result
     
-                    Posts: shufflePosts(data.Posts)
-                };
+        //             Posts: shufflePosts(data.Posts)
+        //         };
 
-                renderItems(shuffledData);
+        //         renderItems(shuffledData);
+        //     });
+        // }
+
+
+
+
+
+
+
+
+        let filters = document.querySelectorAll('#topic-filters .filter-btn');
+
+        filters.forEach((btn) => {
+
+            btn.addEventListener('click', () => {
+
+                // update the active filter based on what is clicked
+                activeFilter = btn.dataset.filter;
+
+                //removing "active" class from all buttons
+                filters.forEach((b) => {
+                    b.classList.remove('active');
+                });
+
+                //add "active" class to what's clicked
+                btn.classList.add('active');
+
+                //if "All" is selected, reshuffle and re-render posts
+                if (activeFilter === "All") {
+                    let shuffledData = {
+                        // copy all properties from the original data object
+                        // posts, glossary, etc
+                        // asked claude if there is an operator to copy all data without manually calling
+                        // ... spread operator
+                        // conversation: https://claude.ai/share/18d9ec65-1005-4953-9d0e-2d3405e4f6aa
+                        ...data,
+
+                        // override Posts property with a shuffled version
+                        // take the original posts, shuffle them, assign result
+                        Posts: shufflePosts(data.Posts)
+                    };
+
+                    renderItems(shuffledData);
+                }
+
+                //apply filtering to posts
+                filterFeed();
             });
-        }
+
+        });
 
 	});
