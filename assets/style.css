@@ -25,11 +25,24 @@
     --off-black: #222222;
 
     --white:#f3f3f3;
+    --off-white:#e0e0e0;
     --black:#323232;
     --gray:#c8c8c8;
     --dark-gray:#848484;
     --yellow:#FFEE00;
     --yellow-press:#d3c613;
+
+    --orange:#e9e0c6;
+    --orange2:#ead69b;
+    --blue:#d5deef;
+    --blue2:#aec4ed;
+    --green:#cce7d8;
+    --green2:#a7e4c3;
+    --red:#eddee2;
+    --red2:#e9c3cd;
+    --purple:#e3d6e9;
+    --purple2:#ddbfeb;
+
 
 
     /* rem units */
@@ -70,7 +83,7 @@ h1 span{
 }
 
 
-#refresh-btn {
+/* #refresh-btn {
     display: block;
     position:relative;
     background: none;
@@ -87,6 +100,90 @@ h1 span{
 
 #refresh-btn:hover {
     opacity: 0.7;
+} */
+
+
+#topic-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    max-width: 40rem;
+    margin: 1.5rem auto 1rem;
+    padding-inline: 5%;
+}
+
+@media (768px <= width <= 1024px) {
+    #topic-filters {
+        padding-inline: 0;
+    }
+}
+@media (width > 1024px) {
+    #topic-filters {
+        padding-inline: 0;
+    }
+}
+
+.filter-btn {
+    padding: .4rem .9rem;
+    border: var(--2px) solid var(--gray);
+    border-radius: var(--999px);
+    background: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Libre', sans-serif;
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: .03em;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.filter-btn:hover {
+    border-color: var(--black);
+}
+
+.filter-btn.active {
+    background: var(--yellow);
+    border-color: var(--off-black);
+    font-weight: 700;
+}
+
+.filter-btn[data-filter="All"]{
+    background-color: var(--off-white);
+    border-color: var(--dark-gray);
+}
+.filter-btn[data-filter="All"]:hover{
+    background-color: var(--gray);
+    border-color: var(--dark-gray);
+}
+.filter-btn[data-filter="Economy"]{
+    background-color: var(--orange);
+}
+.filter-btn[data-filter="Economy"]:hover{
+    background-color: var(--orange2);
+}
+.filter-btn[data-filter="Immigration"]{
+    background-color: var(--blue);
+}
+.filter-btn[data-filter="Immigration"]:hover{
+    background-color: var(--blue2);
+}
+.filter-btn[data-filter="Elections"]{
+    background-color: var(--green);
+}
+.filter-btn[data-filter="Elections"]:hover{
+    background-color: var(--green2);
+}
+.filter-btn[data-filter="Healthcare"]{
+    background-color: var(--red);
+}
+.filter-btn[data-filter="Healthcare"]:hover{
+    background-color: var(--red2);
+}
+.filter-btn[data-filter="Constitutional"]{
+    background-color: var(--purple);
+}
+.filter-btn[data-filter="Constitutional"]:hover{
+    background-color: var(--purple2);
 }
 
 
