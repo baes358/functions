@@ -402,17 +402,9 @@ h1 span{
 	background: var(--white);
 	border: var(--1px) solid var(--dark-gray);
 	border-radius: var(--25px);
-	padding: 1.5rem;
+	padding: 1rem;
     cursor:pointer;
 
-
-
-
-    
-
-    /* transform when term modal is open */
-    transition: transform 0.35s ease;
-	will-change: transform;
 
     
 
@@ -426,9 +418,6 @@ h1 span{
 
 }
 
-#post-modal .modal-content.is-bumped {
-	transform: translateY(-5vh);
-}
 
 #post-modal-close{
     position:absolute;
@@ -447,44 +436,8 @@ h1 span{
 
 /* term modal styling */
 
-#term-modal {
-	position: fixed;
-	inset: 0;
-	z-index: 1000;
-    /* background: rgba(0, 0, 0, 0.45); */
-    display: flex;
-	align-items: center; 
-	justify-content: center;
-	padding: 1rem;
-	box-sizing: border-box;
-    
-    
-}
-#term-modal .modal-content {
-	/* margin-bottom: 8vh; */
-    background: var(--white);
-	border: var(--1px) var(--gray) solid;
-	border-radius: var(--7px);
-	padding: 2rem;
-	width: min(40rem, 90vw);
-    /* width: 40rem; */
-	background: var(--white);
-	border: var(--1-5px) solid var(--dark-gray);
-	border-radius: var(--25px);
-}
-#modal-close{
-    position:absolute;
-    top:1rem;
-    right:1.25rem;
-    font-size:.75rem;
-    padding:.25rem .5rem;
-    border:var(--1px) solid #222222;
-    border-radius:var(--7px);
-}
-#modal-close:hover{
-    background:var(--gray);
-    cursor:pointer;
-}
+
+
 #term-back{
     position:absolute;
     top:1rem;
@@ -499,12 +452,7 @@ h1 span{
     background:var(--gray);
     cursor:pointer;
 }
-#term-modal.term-front {
-	z-index: 1200;
-}
-#term-modal[hidden] {
-	display: none !important;
-}
+
 
 
 .term-header{
@@ -512,27 +460,9 @@ h1 span{
     flex-direction:row;
     margin-block:1.5rem 1rem;
 }
-#modal-term{
-    
-    font-size:1.35rem;
-    font-weight:500;
-}
 
-#modal-topic{
-    display:block;
-    padding:.25rem .5rem;
-    background:var(--gray);
-    border-radius:var(--7px);
-    margin-inline-start:1rem;
 
-}
 
-#modal-definition{
-    margin-block-start:.5rem;
-    line-height:1.4rem;
-    font-weight:400;
-    letter-spacing:.02ch;
-}
 
 h3{
     font-style: italic;
@@ -542,15 +472,7 @@ h3{
 }
 
 
-#modal-related{
-    display:flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    gap:.5rem;
-}
-#modal-related li{
-    
-}
+
 
 .term-panel-anchor {
     position: fixed;
