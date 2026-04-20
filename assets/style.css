@@ -468,6 +468,8 @@ hr{
     font-weight:500;
     font-size:1.2rem;
     margin-block-start:.1rem;
+    max-width:fit-content;
+    flex: 1;
 }
 
 #inline-term-topic{
@@ -475,14 +477,16 @@ hr{
     margin-inline-start:1rem;
     background: var(--gray);
     border-radius:var(--7px);
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
 }
 
 #inline-term-definition{
     line-height:1.5rem;
 }
 
-h3{
-}
+
 #inline-term-related{
     margin-block-end:.5rem;
     display:flex;
@@ -510,8 +514,9 @@ h3{
 .term-header{
     display:flex;
     flex-direction:row;
+    align-items: flex-start;
     margin-block:1.5rem 1rem;
-    padding-inline-end: 5rem;
+    gap:.75rem;
 }
 
 
