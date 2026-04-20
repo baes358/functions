@@ -24,8 +24,8 @@
     /* colors */
     --off-black: #222222;
 
-    --white:#f3f3f3;
-    --off-white:#e0e0e0;
+    --white:#f6f6f6;
+    --off-white:#f1efef;
     --black:#323232;
     --gray:#c8c8c8;
     --dark-gray:#848484;
@@ -59,7 +59,7 @@
 }
 
 body{
-    background:var(--white);
+    background:var(--off-white);
     color:var(--black);
     padding:1.5rem;
 }
@@ -104,8 +104,9 @@ h1 span{
 
 
 #topic-filters {
+    justify-content:center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     gap: .5rem;
     max-width: 40rem;
     margin: 1.5rem auto 1rem;
@@ -125,7 +126,7 @@ h1 span{
 
 .filter-btn {
     padding: .4rem .9rem;
-    border: var(--2px) solid var(--gray);
+    border: var(--1px) solid var(--gray);
     border-radius: var(--999px);
     background: var(--white);
     color: var(--black);
@@ -201,9 +202,9 @@ h1 span{
 
 /* reg post */
 #data-list li{
-    padding:1.75rem;
+    padding:1rem;
     margin: 0 auto;
-    border: var(--2px) solid var(--gray);
+    border: var(--1px) solid var(--gray);
     border-radius:var(--20px);
     width:90%;
     margin-block-end:1rem;
@@ -224,19 +225,18 @@ h1 span{
 }
 
 #data-list li:hover{
-    scale: 105%;
-    filter: drop-shadow(.2rem .2rem .3px var(--black));
+    box-shadow: var(--1px) var(--1px) 10px rgba(0, 0, 0, 0.1);
+    /* border: var(--1-5px) solid var(--dark-gray); */
 }
 
 .profile-header{
     display:flex;
-    padding-block:.5rem;
     border: none;
 }
 
 .initials{
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
     margin:.25rem;
     border-radius:var(--999px);
     border: none;
@@ -249,13 +249,16 @@ h1 span{
 }
 
 .profile-meta{
+    display:flex;
+    flex-direction: row;
     margin-inline-start:.75rem;
-    margin-block:.5rem;
+    margin-block-start:.9rem;
 }
 
 .handle-sect{
     display:flex;
     flex-direction:row;
+    margin-inline-start:.5rem;
     gap:.5rem;
     color:var(--dark-gray);
     font-size:.85rem;
@@ -272,7 +275,8 @@ h1 span{
 }
 
 .post-body{
-    margin-block-start:.5rem;
+    /* margin-block:.25rem; */
+    margin-inline-start:4rem;
     line-height:1.5rem;
     font-weight:400;
     letter-spacing:.02ch;
@@ -281,6 +285,19 @@ h1 span{
     mask-image: linear-gradient(to bottom, black, transparent);
     
 }
+
+
+.post-stats{
+    display:flex;
+    flex-direction:row;
+    margin-block-start:1rem;
+    margin-block-end:.25rem;
+    margin-inline-start:4rem;
+    font-size:.8rem;
+    gap:1rem;
+    color: var(--dark-gray);
+}
+
 
 
 
@@ -299,14 +316,6 @@ h1 span{
 }
 
 
-.post-stats{
-    display:flex;
-    flex-direction:row;
-    margin-block-start:.75rem;
-    font-size:.8rem;
-    gap:1rem;
-    color: var(--dark-gray);
-}
 
 
 .tweet-card {
@@ -391,9 +400,9 @@ h1 span{
 
     width: min(40rem, 90vw);
 	background: var(--white);
-	border: var(--2px) solid var(--dark-gray);
+	border: var(--1px) solid var(--dark-gray);
 	border-radius: var(--25px);
-	padding: 2rem;
+	padding: 1.5rem;
     cursor:pointer;
 
 
@@ -454,7 +463,7 @@ h1 span{
 #term-modal .modal-content {
 	/* margin-bottom: 8vh; */
     background: var(--white);
-	border: var(--1-5px) var(--gray) solid;
+	border: var(--1px) var(--gray) solid;
 	border-radius: var(--7px);
 	padding: 2rem;
 	width: min(40rem, 90vw);
