@@ -243,6 +243,31 @@ let renderItems = (data) => {
         `;
     };
 
+    // helper to populate and reveal the inline term panel inside the post modal
+    let showInlineTermPanel = (termData) => {
+        let inlineTermPanel = document.getElementById('inline-term-panel');
+        let inlineTermName  = document.getElementById('inline-term-name');
+        let inlineTermTopic = document.getElementById('inline-term-topic');
+        let inlineTermDef   = document.getElementById('inline-term-definition');
+        let inlineTermRel   = document.getElementById('inline-term-related');
+        let backButton      = document.getElementById('term-back');
+ 
+        if (!inlineTermPanel) return;
+ 
+        inlineTermName.textContent  = termData.term;
+        inlineTermTopic.textContent = termData.topic;
+        inlineTermDef.textContent   = termData.definition;
+        inlineTermRel.innerHTML     = buildRelatedHTML(termData);
+ 
+        // show or hide back button based on history depth
+        if (termHistory.length === 0) {
+            backButton.classList.add('hidden');
+        } else {
+            backButton.classList.remove('hidden');
+        }
+ 
+        inlineTermPanel.hidden = false;
+    };
 
     // function for opening a post
     let openPostModal = (postData) => {
