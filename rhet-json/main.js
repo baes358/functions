@@ -511,7 +511,8 @@ let renderItems = (data) => {
                 postCard.classList.add('is-bumped');
             }
 
-
+            // if the post modal is not open, a fresh term opens
+            // reset history and state so the back button never shows on the first term
             if (postModal.hidden) {
                 termHistory = [];
                 postInner.dataset.type = '';

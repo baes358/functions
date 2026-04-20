@@ -35,7 +35,7 @@
 
         <ul id="data-list"></ul>
 
-        <section id="term-modal" hidden>
+        <!-- <section id="term-modal" hidden>
             <section class="modal-content">
                 <button id="term-back">← Back</button>
 
@@ -51,12 +51,28 @@
                 <h3>Related Terms</h3>
                 <ul id="modal-related"></ul>
             </section>
-        </section>
+        </section> -->
 
         <section id="post-modal" hidden>
             <section class="modal-content post-modal-contain">
                 <button id="post-modal-close">Close</button>
                 <section id="post-modal-inner"></section>
+
+                <!-- inline term panel -->
+                <section id="inline-term-panel" hidden>
+                    <!-- asked claude if there was an element for a divider without using div/section -->
+                    <!-- conversation: https://claude.ai/share/006c92fb-82f7-4ccf-8718-d97494780522 -->
+                    <hr class="term-divider">
+                    <button id="term-back" class="hidden">← Back</button>
+                    <section class="term-header">
+                        <h2 id="inline-term-name"></h2>
+                        <p id="inline-term-topic"></p>
+                    </section>
+                    <p id="inline-term-definition"></p>
+                    <h3>Related Terms</h3>
+                    <ul id="inline-term-related"></ul>
+                </section>
+
             </section>
         </section>
 
