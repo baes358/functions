@@ -230,6 +230,7 @@ h1 span{
 }
 
 .profile-header{
+    
     display:flex;
     border: none;
 }
@@ -250,15 +251,16 @@ h1 span{
 
 .profile-meta{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-inline-start:.75rem;
-    margin-block-start:.9rem;
+    margin-block:.4rem .75rem;
+    gap:.05rem;
 }
 
 .handle-sect{
     display:flex;
     flex-direction:row;
-    margin-inline-start:.5rem;
+    
     gap:.5rem;
     color:var(--dark-gray);
     font-size:.85rem;
@@ -270,13 +272,11 @@ h1 span{
     margin-block-end:.15rem;
 }
 
-.handle{
-    
-}
+
 
 .post-body{
     /* margin-block:.25rem; */
-    margin-inline-start:4rem;
+    margin-inline-start:3.75rem;
     line-height:1.5rem;
     font-weight:400;
     letter-spacing:.02ch;
@@ -307,6 +307,9 @@ h1 span{
     padding:.2rem .15rem;
     border:var(--1px) solid #222222;
     border-radius:var(--7px);
+    text-align:center;
+    width: fit-content;
+    white-space: nowrap;
 }
 
 .term-link:hover{
@@ -442,7 +445,11 @@ hr{
 
 
 
-/* term modal styling */
+/* INLINE TERM STYLES */
+
+#inline-term-panel{
+    padding-inline:.5rem;
+}
 
 #inline-term-close{
    position:absolute;
@@ -460,7 +467,6 @@ hr{
 #inline-term-name{
     font-weight:500;
     font-size:1.2rem;
-    margin-inline-start:4rem;
     margin-block-start:.1rem;
 }
 
@@ -472,19 +478,21 @@ hr{
 }
 
 #inline-term-definition{
-    margin-inline-start:4rem;
+    line-height:1.5rem;
 }
 
 h3{
-    margin-inline-start:4rem;
 }
 #inline-term-related{
-    margin-inline-start:4rem;
     margin-block-end:.5rem;
     display:flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap:.5rem;
 
+}
+#inline-term-related li{
+    width: fit-content;
 }
 
 #term-back{
@@ -503,6 +511,7 @@ h3{
     display:flex;
     flex-direction:row;
     margin-block:1.5rem 1rem;
+    padding-inline-end: 5rem;
 }
 
 
