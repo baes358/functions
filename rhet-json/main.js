@@ -237,11 +237,11 @@ let renderItems = (data) => {
     // helper to populate and reveal the inline term panel inside the post modal
     let showInlineTermPanel = (termData) => {
         let inlineTermPanel = document.getElementById('inline-term-panel');
-        let inlineTermName  = document.getElementById('inline-term-name');
+        let inlineTermName = document.getElementById('inline-term-name');
         let inlineTermTopic = document.getElementById('inline-term-topic');
-        let inlineTermDef   = document.getElementById('inline-term-definition');
-        let inlineTermRel   = document.getElementById('inline-term-related');
-        let backButton      = document.getElementById('term-back');
+        let inlineTermDef = document.getElementById('inline-term-definition');
+        let inlineTermRel = document.getElementById('inline-term-related');
+        let backButton = document.getElementById('term-back');
  
         if (!inlineTermPanel) return;
  
@@ -568,7 +568,7 @@ let renderItems = (data) => {
 
 
         //clicking back for terms + related terms modals
-        if (event.target.id === 'term-back') {
+        if (event.target.closest('#term-back')) {
 
             let postInner = document.getElementById('post-modal-inner');
             let backButton = document.getElementById('term-back');

@@ -351,7 +351,7 @@ h1 span{
 
 
 
-/* post modal styling */
+/* POST MODAL STYLES */
 
 
 #post-modal {
@@ -367,7 +367,7 @@ h1 span{
     /* 16px - 1rem */
 	/* padding: 1rem; */
 	z-index: 900;
-
+    cursor:default;
 
     
 }
@@ -397,13 +397,13 @@ h1 span{
 
 #post-modal .modal-content {
 	
-
+    position:relative;
     width: min(40rem, 90vw);
 	background: var(--white);
 	border: var(--1px) solid var(--dark-gray);
 	border-radius: var(--25px);
 	padding: 1rem;
-    cursor:pointer;
+   
 
 
     
@@ -433,23 +433,67 @@ h1 span{
     cursor:pointer;
 }
 
+hr{
+    margin-block:2rem 1rem;
+    border: none;
+    border-top: var(--2px) dashed var(--gray);
+
+}
+
+
 
 /* term modal styling */
 
+#inline-term-close{
+   position:absolute;
+   right:1.25rem;
+    
 
+}
+
+#inline-term-close:hover{
+   
+   cursor:pointer; 
+
+}
+
+#inline-term-name{
+    font-weight:500;
+    font-size:1.2rem;
+    margin-inline-start:4rem;
+    margin-block-start:.1rem;
+}
+
+#inline-term-topic{
+    padding:.25rem .5rem;
+    margin-inline-start:1rem;
+    background: var(--gray);
+    border-radius:var(--7px);
+}
+
+#inline-term-definition{
+    margin-inline-start:4rem;
+}
+
+h3{
+    margin-inline-start:4rem;
+}
+#inline-term-related{
+    margin-inline-start:4rem;
+    margin-block-end:.5rem;
+    display:flex;
+    flex-direction: row;
+    gap:.5rem;
+
+}
 
 #term-back{
     position:absolute;
-    top:1rem;
-    left:1.25rem;
-    font-size:.75rem;
-    padding:.25rem .5rem;
-    border:var(--1px) solid #222222;
-    border-radius:var(--7px);
-    z-index:5;
+    right:3rem;
+
+    
 }
 #term-back:hover{
-    background:var(--gray);
     cursor:pointer;
 }
 
@@ -468,7 +512,7 @@ h3{
     font-style: italic;
     color:var(--dark-gray);
     font-weight: 500;
-    margin-block:.75rem .25rem;
+    margin-block:.75rem .5rem;
 }
 
 
