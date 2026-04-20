@@ -512,6 +512,11 @@ let renderItems = (data) => {
             }
 
 
+            if (postModal.hidden) {
+                termHistory = [];
+                postInner.dataset.type = '';
+                postInner.dataset.key = '';
+            }
 
             // store history ONLY if already viewing a term
             if (postInner.dataset.type === 'term') {
