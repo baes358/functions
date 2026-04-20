@@ -540,9 +540,11 @@ let renderItems = (data) => {
             // if the post modal is not open, this is a fresh term open from the feed
             // reset history and state so the back button never shows on the first term
             if (postModal.hidden) {
+
                 termHistory = [];
                 postInner.dataset.type = '';
                 postInner.dataset.key  = '';
+
                 // open modal with no post card, just the term panel below
                 postInner.innerHTML = '';
                 postInner.classList.remove('tweet-card');
@@ -551,7 +553,9 @@ let renderItems = (data) => {
  
             // push current term to history ONLY if already viewing a term
             if (postInner.dataset.type === 'term') {
+
                 let currentKey = postInner.dataset.key;
+
                 if (currentKey) {
                     termHistory.push(currentKey);
                 }
@@ -578,34 +582,21 @@ let renderItems = (data) => {
             let postInner = document.getElementById('post-modal-inner');
             let backButton = document.getElementById('term-back');
 
-            let modalTerm = document.getElementById('modal-term');
-            let modalDefinition = document.getElementById('modal-definition');
-            let modalRelated = document.getElementById('modal-related');
+            let inlineTermName = document.getElementById('inline-term-name');
+            let inlineTermTopic = document.getElementById('inline-term-topic');
+            let inlineTermDef = document.getElementById('inline-term-definition');
+            let inlineTermRel = document.getElementById('inline-term-related');
+
+            // let modalTerm = document.getElementById('modal-term');
+            // let modalDefinition = document.getElementById('modal-definition');
+            // let modalRelated = document.getElementById('modal-related');
             
 
-            //need at least 2 items to go back - the current and the previous
-            // if (termHistory.length <= -1) {
-            //     if (backButton) backButton.classList.add('hidden');
-
-            //     return;
-            // }
 
             //remove most previous from stack
             //navigates to previous term user clicked on
             // popping the previous term from the stack
             let previousKey = termHistory.pop();
-
-
-            // use currentkey within the dataset key
-            // let currentKey = postInner.dataset.key;
-            // if it matches the top, remove it from the history
-
-            // if(termHistory[termHistory.length - 1] === currentKey){
-            //     termHistory.pop();
-            // }
-
-            //now previous term is in new top of stack
-            // let previousKey = termHistory[termHistory.length - 1];
 
 
             // if nothing to go back to
@@ -624,8 +615,26 @@ let renderItems = (data) => {
 
 
 
+            //populating the panel with the previous term
+            inlineTermName.textContent = previousTerm.term;
+            inlineTermTopic.textContent = previousTerm.topic;
+            inlineTermDef.textContent = previousTerm.definition;
+            inlineTermRel.innerHTML = buildRelatedHTML(previousTerm);
 
 
+            postInner.dataset.type = 'term';
+            postInner.dataset.key = previousKey;
+
+
+            // hide back button if we're back to the first term
+            if (termHistory.length === 0) {
+                backButton.classList.add('hidden');
+            } else {
+                backButton.classList.remove('hidden');
+            }
+ 
+            return;
+        }
 
 
 
@@ -658,37 +667,37 @@ let renderItems = (data) => {
             });
 
 
-            modalTerm.textContent = previousTerm.term;
-            modalDefinition.textContent = previousTerm.definition;
+        //     modalTerm.textContent = previousTerm.term;
+        //     modalDefinition.textContent = previousTerm.definition;
 
 
 
-            modalRelated.innerHTML = relatedHTML;
-            postInner.dataset.type = 'term';
-            postInner.dataset.key = previousKey;
+        //     modalRelated.innerHTML = relatedHTML;
+        //     postInner.dataset.type = 'term';
+        //     postInner.dataset.key = previousKey;
 
 
 
             
-            // add classlist hidden to the back button to hide on first term only
-            // when user presses back to first term, termHistory still has first term sttored in
-            if (termHistory.length === 0){
-                backButton.classList.add('hidden');
-            } else {
-                backButton.classList.remove('hidden');
+        //     // add classlist hidden to the back button to hide on first term only
+        //     // when user presses back to first term, termHistory still has first term sttored in
+        //     if (termHistory.length === 0){
+        //         backButton.classList.add('hidden');
+        //     } else {
+        //         backButton.classList.remove('hidden');
 
-            }
+        //     }
 
     
 
-            return;
+        //     return;
 
 
 
 
 
 
-        }
+        // }
 
 
 
