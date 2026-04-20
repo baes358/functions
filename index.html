@@ -9,33 +9,9 @@
 
     <body>
         <h1 class="title"><span>DECODED</span><br>Lines</h1>
-        <!-- <button id="refresh-btn">
-            <svg width="50" height="50" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect width="96" height="96" fill="url(#pattern0_39_74)"/>
-                <defs>
-                <pattern id="pattern0_39_74" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image0_39_74" transform="scale(0.0104167)"/>
-                </pattern>
-                <image id="image0_39_74" width="96" height="96" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
-                </defs>
-            </svg>
-        </button> -->
-
-
-        <section id="topic-filters">
-            <button class="filter-btn active" data-filter="All">For You</button>
-            <button class="filter-btn" data-filter="Economy">Economy</button>
-            <button class="filter-btn" data-filter="Immigration">Immigration</button>
-            <button class="filter-btn" data-filter="Elections">Elections</button>
-            <button class="filter-btn" data-filter="Healthcare">Healthcare</button>
-            <button class="filter-btn" data-filter="Constitutional">Constitutional</button>
-        </section>
-
-
-
-        <ul id="data-list"></ul>
-
         
+        
+
         <button id="info-btn">
             <img src="./assets/icons/info.svg" class="icon" />
         </button>
@@ -48,6 +24,25 @@
             </section>
         </section>
 
+
+
+
+        <section id="topic-filters">
+            <button class="filter-btn active" data-filter="All">For You</button>
+            <button class="filter-btn" data-filter="Economy">Economy</button>
+            <button class="filter-btn" data-filter="Immigration">Immigration</button>
+            <button class="filter-btn" data-filter="Elections">Elections</button>
+            <button class="filter-btn" data-filter="Healthcare">Healthcare</button>
+            <button class="filter-btn" data-filter="Constitutional">Constitutional</button>
+        </section>
+
+
+        <ul id="data-list"></ul>
+
+        
+        
+
+        
 
         <section id="post-modal" hidden>
             <section class="modal-content post-modal-contain">

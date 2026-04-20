@@ -780,33 +780,6 @@ fetch('./rhet-json/data.json')
 
 
 
-        // let refreshBtn = document.getElementById('refresh-btn');
-
-        // if (refreshBtn) {
-        //     refreshBtn.addEventListener('click', () => {
-        //         // object shuffledData
-        //         let shuffledData = {
-        //             // copy all properties from the original data object
-        //             // posts, glossary, etc
-        //             // asked claude if there is an operator to copy all data without manually calling
-        //             // ... spread operator
-        //             // conversation: https://claude.ai/share/18d9ec65-1005-4953-9d0e-2d3405e4f6aa
-        //             ...data,
-
-        //             // override Posts property with a shuffled version
-        //             // take the original posts, shuffle them, assign result
-    
-        //             Posts: shufflePosts(data.Posts)
-        //         };
-
-        //         renderItems(shuffledData);
-        //     });
-        // }
-
-
-
-
-
 
 
 
@@ -851,4 +824,28 @@ fetch('./rhet-json/data.json')
 
         });
 
-	});
+});
+
+let infoBtn = document.getElementById('info-btn');
+let infoModal = document.getElementById('info-modal');
+let infoClose = document.getElementById('info-modal-close');
+
+//opening the info modal on first load
+infoModal.hidden = false;
+
+// closing the info modal
+infoClose.addEventListener('click', () => {
+    infoModal.hidden = true;
+});
+
+// close on backdrop click
+infoModal.addEventListener('click', (event) => {
+    if (event.target.id === 'info-modal') {
+        infoModal.hidden = true;
+    }
+});
+
+// reopening via info button
+infoBtn.addEventListener('click', () => {
+    infoModal.hidden = false;
+});
