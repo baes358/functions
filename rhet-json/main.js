@@ -669,6 +669,18 @@ let renderItems = (data) => {
 
 
 
+        if (event.target.closest('#inline-term-close')) {
+            let inlineTermPanel = document.getElementById('inline-term-panel');
+            let postInner = document.getElementById('post-modal-inner');
+
+            inlineTermPanel.hidden = true;
+            termHistory = [];
+            postInner.dataset.type = 'post';
+            postInner.dataset.key = '';
+
+            return;
+        }
+
 
 
 
