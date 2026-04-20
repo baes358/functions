@@ -65,14 +65,19 @@ body{
 }
 
 h1{
-    margin-block:3rem;
+    margin-block:3rem 2rem;
     text-align:center;
-    font-size:3rem;
+    font-size:4rem;
     text-transform: uppercase;
     font-weight:800;
     letter-spacing:.2em;
-    line-height: 3.25rem;
+    line-height: 3.75rem;
     color:var(--off-black);
+}
+
+h1 span{
+    color:transparent;
+    -webkit-text-stroke: var(--2px) var(--off-black);
 }
 @media (768px <= width <= 1024px) {
   
@@ -174,7 +179,7 @@ h1{
     flex-wrap:wrap;
     gap: .5rem;
     max-width: 40rem;
-    margin: 1.5rem auto 1rem;
+    margin: 2rem auto;
     padding-inline: 5%;
 }
 
