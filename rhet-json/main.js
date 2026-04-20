@@ -202,46 +202,46 @@ let renderItems = (data) => {
 
 
 
-    let buildTermInnerHTML = (termData) => {
+    // let buildTermInnerHTML = (termData) => {
 
-        let related = [];
+    //     let related = [];
 
-        if (termData.related1 && termData.related1.trim().length > 0) {
-            related.push(termData.related1.trim());
-        }
-        if (termData.related2 && termData.related2.trim().length > 0) {
-            related.push(termData.related2.trim());
-        }
-        if (termData.related3 && termData.related3.trim().length > 0) {
-            related.push(termData.related3.trim());
-        }
+    //     if (termData.related1 && termData.related1.trim().length > 0) {
+    //         related.push(termData.related1.trim());
+    //     }
+    //     if (termData.related2 && termData.related2.trim().length > 0) {
+    //         related.push(termData.related2.trim());
+    //     }
+    //     if (termData.related3 && termData.related3.trim().length > 0) {
+    //         related.push(termData.related3.trim());
+    //     }
 
-        let relatedHTML = '';
+    //     let relatedHTML = '';
 
-        related.forEach((relatedTerm) =>{
-            let relatedKey = relatedTerm.toLowerCase();
+    //     related.forEach((relatedTerm) =>{
+    //         let relatedKey = relatedTerm.toLowerCase();
 
-            relatedHTML += 
-            `
-                <li>
-                    <button class="term-link" data-term="${relatedKey}" type="button">
-                        ${relatedTerm}
-                    </button>
-                </li>
-            `;
-        });
+    //         relatedHTML += 
+    //         `
+    //             <li>
+    //                 <button class="term-link" data-term="${relatedKey}" type="button">
+    //                     ${relatedTerm}
+    //                 </button>
+    //             </li>
+    //         `;
+    //     });
 
-        return `
-                <button id="term-back">← Back</button>
+    //     return `
+    //             <button id="term-back">← Back</button>
 
-                <h2>${termData.term}</h2>
-                <p>${termData.topic}</p>
-                <p>${termData.definition}</p>
+    //             <h2>${termData.term}</h2>
+    //             <p>${termData.topic}</p>
+    //             <p>${termData.definition}</p>
 
-                <h3>Related Terms</h3>
-                <ul>${relatedHTML}</ul>
-        `;
-    };
+    //             <h3>Related Terms</h3>
+    //             <ul>${relatedHTML}</ul>
+    //     `;
+    // };
 
     // helper to populate and reveal the inline term panel inside the post modal
     let showInlineTermPanel = (termData) => {
