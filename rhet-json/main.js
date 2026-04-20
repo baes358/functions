@@ -466,37 +466,37 @@ let renderItems = (data) => {
 
     //helper function for positioning term modals
     //reusing from getBoundingCLientRect() positioning logic with the use of classes -> then styling within CSS, rather than inline JS styles
-    let positionTermPanel = () => {
+    // let positionTermPanel = () => {
 
-        //grabbign elements
-        let postModal = document.getElementById('post-modal');
+    //     //grabbign elements
+    //     let postModal = document.getElementById('post-modal');
 
-        let postCard;
-        if (postModal) {
-            postCard = postModal.querySelector('.modal-content');
-        }
+    //     let postCard;
+    //     if (postModal) {
+    //         postCard = postModal.querySelector('.modal-content');
+    //     }
 
-        let termPanel = document.querySelector('#term-modal .modal-content');
+    //     let termPanel = document.querySelector('#term-modal .modal-content');
 
-        // asked claude if there is a way to retrieve the size and position of an element relative to the viewport
-        // also asked about styling within the parameters of getBoundingClientRect(), which apparently is better for dynamic styling whereas CSS styling is more static
-        // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
-        if (postModal && !postModal.hidden && postCard && termPanel) {
-            let rect = postCard.getBoundingClientRect();
-            let gap = 8;
+    //     // asked claude if there is a way to retrieve the size and position of an element relative to the viewport
+    //     // also asked about styling within the parameters of getBoundingClientRect(), which apparently is better for dynamic styling whereas CSS styling is more static
+    //     // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
+    //     if (postModal && !postModal.hidden && postCard && termPanel) {
+    //         let rect = postCard.getBoundingClientRect();
+    //         let gap = 8;
 
-            termPanel.classList.add('term-panel-anchor');
-            termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
+    //         termPanel.classList.add('term-panel-anchor');
+    //         termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
 
-        } else if (termPanel) {
+    //     } else if (termPanel) {
 
-            termPanel.classList.remove('term-panel-anchor');
-            termPanel.style.removeProperty('--term-panel-top');
-        }
+    //         termPanel.classList.remove('term-panel-anchor');
+    //         termPanel.style.removeProperty('--term-panel-top');
+    //     }
 
 
 
-    }
+    // }
 
 
 
