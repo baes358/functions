@@ -729,47 +729,26 @@ let renderItems = (data) => {
 
 
 
-        //closing the modal if click on close or backdrop
-
-        if (event.target.id === 'modal-close' || event.target.id === 'term-modal'){
-
-            // resetting inline styles for modal content
-            let termPanel = document.querySelector('#term-modal .modal-content');
-                if (termPanel) {
-                    termPanel.style.position = '';
-                    termPanel.style.top = '';
-                    termPanel.style.left = '';
-                    termPanel.style.transform = '';
-                    termPanel.style.width = '';
-                    termPanel.style.marginBlockEnd = '';
-                    termPanel.style.overflow = '';
-                }
-
-
-
-
-
-
-
-            let termModal = document.getElementById('term-modal');
-	        termModal.hidden = true;
-	        termModal.classList.remove('term-front');
-
-            // still need to grab post modal id first - then access modal content
-            // making sure to remove class for post modal as well when term modal is affected
-            let postModal = document.getElementById('post-modal');
-	        let postCard = postModal.querySelector('.modal-content');
-            if (postCard){
-                postCard.classList.remove('is-bumped');
-            }
-	        
-
-
-        }
+       
         //closing the post modal if click on close or backdrop
 
         if (event.target.id === 'post-modal-close' || event.target.id === 'post-modal'){
-            document.getElementById('post-modal').hidden = true;
+            let postModal = document.getElementById('post-modal');
+            let inlineTermPanel = document.getElementById('inline-term-panel');
+            let postInner = document.getElementById('post-modal-inner');
+ 
+            postModal.hidden = true;
+            
+
+
+            // reset all term state on close
+            if (inlineTermPanel) inlineTermPanel.hidden = true;
+            termHistory = [];
+ 
+            if (postInner) {
+                postInner.dataset.type = '';
+                postInner.dataset.key  = '';
+            }
         }
 
 
