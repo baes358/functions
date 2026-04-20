@@ -275,6 +275,8 @@ let renderItems = (data) => {
         
         let postInner = document.getElementById('post-modal-inner');
 
+        let inlineTermPanel = document.getElementById('inline-term-panel');
+
 
 
         // if empty return
@@ -288,6 +290,11 @@ let renderItems = (data) => {
         postInner.dataset.type = 'post';
         postInner.dataset.key = '';
         termHistory = [];
+
+        // hide the inline term panel when opening a fresh post
+        if (inlineTermPanel) {
+            inlineTermPanel.hidden = true;
+        }
 
         postInner.classList.add('tweet-card');
         
@@ -530,87 +537,33 @@ let renderItems = (data) => {
             let postModal = document.getElementById('post-modal');
 
             
-            let postCard = postModal.querySelector('.modal-content');
-
-            if (postCard) {
-                postCard.classList.add('is-bumped');
-            }
-
-            // if the post modal is not open, a fresh term opens
+            // if the post modal is not open, this is a fresh term open from the feed
             // reset history and state so the back button never shows on the first term
             if (postModal.hidden) {
                 termHistory = [];
                 postInner.dataset.type = '';
-                postInner.dataset.key = '';
+                postInner.dataset.key  = '';
+                // open modal with no post card, just the term panel below
+                postInner.innerHTML = '';
+                postInner.classList.remove('tweet-card');
+                postModal.hidden = false;
             }
-
-            // store history ONLY if already viewing a term
+ 
+            // push current term to history ONLY if already viewing a term
             if (postInner.dataset.type === 'term') {
                 let currentKey = postInner.dataset.key;
                 if (currentKey) {
                     termHistory.push(currentKey);
                 }
-            } 
-            
-
+            }
+ 
+            // update state to the new term
             postInner.dataset.type = 'term';
-            postInner.dataset.key = key;
-
-
-            let modal = document.getElementById('term-modal');
-
-            let modalTerm = document.getElementById('modal-term');
-            let modalTopic = document.getElementById('modal-topic');
-            let modalDefinition = document.getElementById('modal-definition');
-            let modalRelated = document.getElementById('modal-related');
-
-            // fill content
-            modalTerm.textContent = termData.term;
-            modalTopic.textContent = termData.topic;
-            modalDefinition.textContent = termData.definition;
-
-
-            let related = [];
-
-            if (termData.related1 && termData.related1.trim().length > 0) {
-                related.push(termData.related1.trim());
-            }
-            if (termData.related2 && termData.related2.trim().length > 0) {
-                related.push(termData.related2.trim());
-            }
-            if (termData.related3 && termData.related3.trim().length > 0) {
-                related.push(termData.related3.trim());
-            }
-
-            let relatedHTML = '';
-
-            related.forEach((relatedTerm) =>{
-                let relatedKey = relatedTerm.toLowerCase();
-
-                relatedHTML += `
-                    <li>
-                        <button class="term-link" data-term="${relatedKey}" type="button">
-                            ${relatedTerm}
-                        </button>
-                    </li>
-                `;
-            });
-
-            modalRelated.innerHTML = relatedHTML;
-
-            modal.hidden = false;
-            let backButton = document.getElementById('term-back');
-
-            if (termHistory.length === 0){
-                backButton.classList.add('hidden');
-            } else {
-                backButton.classList.remove('hidden');
-            }
-
-            positionTermPanel();
-
-
-
+            postInner.dataset.key  = key;
+ 
+            showInlineTermPanel(termData);
+ 
+            return;
         }
 
 
