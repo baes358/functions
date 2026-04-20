@@ -475,11 +475,27 @@ hr{
 #inline-term-topic{
     padding:.25rem .5rem;
     margin-inline-start:1rem;
-    background: var(--gray);
+    font-size:.9rem;
     border-radius:var(--7px);
     white-space: nowrap;
     flex-shrink: 0;
     align-self: flex-start;
+}
+
+.topic-tag-economy{
+    background:var(--orange);
+}
+.topic-tag-immigration{
+    background:var(--blue);
+}
+.topic-tag-elections{
+    background:var(--green);
+}
+.topic-tag-healthcare{
+    background:var(--red);
+}
+.topic-tag-constitutional{
+    background:var(--purple);
 }
 
 #inline-term-definition{
@@ -517,6 +533,7 @@ hr{
     align-items: flex-start;
     margin-block:1.5rem 1rem;
     gap:.75rem;
+    padding-inline-end:4rem;
 }
 
 

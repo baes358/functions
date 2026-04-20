@@ -245,10 +245,12 @@ let renderItems = (data) => {
  
         if (!inlineTermPanel) return;
  
-        inlineTermName.textContent  = termData.term;
+        inlineTermName.textContent = termData.term;
         inlineTermTopic.textContent = termData.topic;
-        inlineTermDef.textContent   = termData.definition;
-        inlineTermRel.innerHTML     = buildRelatedHTML(termData);
+        // adding specific classes of the topics so i can match colors to the filters
+        inlineTermTopic.className = 'topic-tag-' + termData.topic.toLowerCase();
+        inlineTermDef.textContent = termData.definition;
+        inlineTermRel.innerHTML = buildRelatedHTML(termData);
  
         // show or hide back button based on history depth
         if (termHistory.length === 0) {
