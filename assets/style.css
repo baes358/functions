@@ -1,11 +1,12 @@
+
 @font-face {
-    font-family: 'Libre';
-    src: url('../fonts/LibreFranklin-VariableFont_wght.ttf') format('truetype');
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik-VariableFont_wght.ttf') format('truetype');
     
 }
 @font-face {
-    font-family: 'Libre-Italic';
-    src: url('../fonts/LibreFranklin-Italic-VariableFont_wght.ttf') format('truetype');
+    font-family: 'Rubik-Italic';
+    src: url('../fonts/Rubik-Italic-VariableFont_wght.ttf') format('truetype');
 
 }
 
@@ -19,7 +20,7 @@
 }
 
 :root{
-    font-family:'Libre', sans-serif;
+    font-family:'Rubik', sans-serif;
 
     /* colors */
     --off-black: #222222;
@@ -127,12 +128,13 @@ h1 span{
 
 #info-modal .modal-content {
     position: relative;
+    
     width: min(40rem, 90vw);
     background: var(--black);
     color:var(--white);
     border: var(--1px) solid var(--dark-gray);
     border-radius: var(--25px);
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 #info-modal-close {
@@ -153,14 +155,14 @@ h1 span{
 .info-title{
     text-align:center;
     margin-block-start:2rem;
-    font-size:1.25rem;
+    font-size:1.5rem;
 }
 .info-desc{
-    text-align:center;
-    font-weight:300;
+    text-align:left;
+    font-weight:350;
     margin-block:1rem;
     line-height:1.5rem;
-    letter-spacing:.025ch;
+    letter-spacing:.05ch;
     font-size:1rem;
 }
 
@@ -201,7 +203,7 @@ h1 span{
     background: var(--white);
     color: var(--black);
     cursor: pointer;
-    font-family: 'Libre', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: .8rem;
     font-weight: 500;
     letter-spacing: .03em;
@@ -383,7 +385,7 @@ h1 span{
 }
 
 .term-link:hover{
-    font-family: 'Libre-Italic';
+    font-family: 'Rubik-Italic';
     font-weight:500;
     background:var(--yellow-press);
 }
@@ -475,7 +477,7 @@ h1 span{
 	background: var(--white);
 	border: var(--1px) solid var(--dark-gray);
 	border-radius: var(--25px);
-	padding: 1rem;
+	padding: 1.5rem;
    
 
 
@@ -495,7 +497,7 @@ h1 span{
 #post-modal-close{
     position:absolute;
     top:1rem;
-    right:1.25rem;
+    right:1.5rem;
     font-size:.75rem;
     padding:.25rem .5rem;
     border:var(--1px) solid #222222;
@@ -523,7 +525,7 @@ hr{
 
 #inline-term-close{
    position:absolute;
-   right:1.25rem;
+   right:2rem;
     
 
 }
@@ -613,7 +615,7 @@ h3{
     font-style: italic;
     color:var(--dark-gray);
     font-weight: 500;
-    margin-block:.75rem .5rem;
+    margin-block:1rem .5rem;
 }
 
 
