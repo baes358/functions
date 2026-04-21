@@ -181,7 +181,7 @@ h1 span{
 #info-modal-close {
     position: absolute;
     top: 1rem;
-    right: 1.25rem;
+    right: 1rem;
     font-size: .75rem;
     padding: .25rem .5rem;
     border: var(--1px) solid var(--white);
@@ -346,9 +346,7 @@ h1 span{
         width:40rem;
     }
 }
-#data-list li:last-child {
-    /* border-block-end:none; */
-}
+
 
 #data-list li:hover{
     box-shadow: var(--1px) var(--1px) 10px rgba(0, 0, 0, 0.3);
@@ -409,8 +407,27 @@ h1 span{
     backdrop-filter: blur(10px);
     background: rgba(255,255,255,0.2);
     mask-image: linear-gradient(to bottom, black, transparent);
-    
+    font-size: .85rem;
+    line-height: 1.2rem;
+
 }
+
+@media (768px <= width <= 1024px) {
+    .post-body{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
+}
+
+@media (width > 1024px) {
+    .post-body{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
+
+}
+    
+
 
 
 .post-stats{
@@ -531,7 +548,7 @@ h1 span{
 	background: var(--white);
 	border: var(--1px) solid var(--dark-gray);
 	border-radius: var(--25px);
-	padding: 1.5rem;
+	padding: 1rem;
     font-size: .85rem;
     line-height: 1.2rem;
 
@@ -580,14 +597,14 @@ h1 span{
 #post-modal-close{
     position:absolute;
     top:1rem;
-    right:1.5rem;
+    right:1rem;
     font-size:.75rem;
     padding:.25rem .5rem;
     border:var(--1px) solid #222222;
     border-radius:var(--7px);
 }
 #post-modal-close:hover{
-    background:var(--gray);
+    background:var(--light-gray);
     cursor:pointer;
 }
 
@@ -608,7 +625,7 @@ hr{
 
 #inline-term-close{
    position:absolute;
-   right:2rem;
+   right:1.5rem;
     
 
 }
@@ -699,7 +716,7 @@ hr{
 
 #term-back{
     position:absolute;
-    right:3.75rem;
+    right:3.25rem;
     
 
     
