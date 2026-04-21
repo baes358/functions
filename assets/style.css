@@ -678,6 +678,19 @@ hr{
     flex-direction: row;
     flex-wrap: wrap;
     gap:.5rem;
+    font-size: .85rem;
+
+}
+@media (768px <= width <= 1024px) {
+    #inline-term-related{
+        font-size: 1rem;
+    }
+}
+
+@media (width > 1024px) {
+    #inline-term-related{
+        font-size: 1rem;
+    }
 
 }
 #inline-term-related li{
