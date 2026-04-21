@@ -42,7 +42,7 @@ Flexbox is usedthroughout. The feed is centered with a `max-width` of 40rem, and
 
 ### Responsiveness
 
-`@media` queries are declared at 768px and 1024px breakpoints.
+Mobile-first styles, with `@media` queries declared at 768px and 1024px breakpoints.
 
 ---
 
