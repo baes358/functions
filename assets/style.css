@@ -28,22 +28,28 @@
     --white:#f6f6f6;
     --off-white:#f1efef;
     --black:#323232;
-    --gray:#c8c8c8;
-    --dark-gray:#848484;
+    --light-gray:#c9c9c9;
+    --gray:#969696;
+    --dark-gray:#666666;
     --yellow:#FFEE00;
     --yellow-press:#d3c613;
 
     --orange:#e9e0c6;
-    --orange2:#ead69b;
+    --orange2:#fadc82;
     --blue:#d5deef;
-    --blue2:#aec4ed;
+    --blue2:#789fe7;
     --green:#cce7d8;
-    --green2:#a7e4c3;
+    --green2:#7fd4a7;
     --red:#eddee2;
-    --red2:#e9c3cd;
+    --red2:#df9aac;
     --purple:#e3d6e9;
-    --purple2:#ddbfeb;
+    --purple2:#c493db;
 
+    /* bg gradient colors */
+
+    --right-red:#f1ced4;
+    --left-blue:#cccff1;
+    --mid-purp:#e8d8f4;
 
 
     /* rem units */
@@ -60,9 +66,23 @@
 }
 
 body{
-    background:var(--off-white);
-    color:var(--black);
-    padding:1.5rem;
+    background: linear-gradient(270deg, var(--right-red),var(--left-blue), var(--mid-purp));
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    color: var(--black);
+    /* padding: 1.5rem; */
+}
+
+@keyframes gradientShift {
+    0%{ 
+        background-position: 0% 50%; 
+    }
+    50%{ 
+        background-position: 100% 50%; 
+    }
+    100%{ 
+        background-position: 0% 50%; 
+    }
 }
 
 h1{
@@ -215,8 +235,8 @@ h1 span{
 }
 
 .filter-btn.active {
-    background: var(--yellow);
     border-color: var(--off-black);
+    border-width: var(--1-5px);
     font-weight: 700;
 }
 
@@ -225,7 +245,7 @@ h1 span{
     border-color: var(--dark-gray);
 }
 .filter-btn[data-filter="All"]:hover{
-    background-color: var(--gray);
+    background-color: var(--light-gray);
     border-color: var(--dark-gray);
 }
 .filter-btn[data-filter="Economy"]{
@@ -297,7 +317,7 @@ h1 span{
 }
 
 #data-list li:hover{
-    box-shadow: var(--1px) var(--1px) 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--1px) var(--1px) 10px rgba(0, 0, 0, 0.3);
     /* border: var(--1-5px) solid var(--dark-gray); */
 }
 
