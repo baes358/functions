@@ -137,9 +137,22 @@ h1 span{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding-block-start: 7rem;
+    padding-block-start: 2rem;
     padding-inline: 1rem;
     z-index: 950;
+}
+
+@media (768px <= width <= 1024px) {
+    #info-modal {
+        padding-block-start: 10rem;
+    }
+}
+
+@media (width > 1024px) {
+    #info-modal {
+        padding-block-start: 10rem;
+    }
+
 }
 
 #info-modal[hidden] {
@@ -455,7 +468,7 @@ h1 span{
 	background: rgba(0, 0, 0, 0.1);
 	display: flex;
     align-items: flex-start;
-	padding-block-start: 7rem;
+	padding-block-start: 2rem;
 	padding-inline: 1rem;
 	padding-block-end: 1rem;
 	justify-content: center;
