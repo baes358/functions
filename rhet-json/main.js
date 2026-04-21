@@ -91,7 +91,7 @@ let renderItems = (data) => {
 
 
     // asked claude to clarify what the differences between .split(), .trim(), .slice() to use within my data
-    // conversation: https://claude.ai/share/3ce87fcf-b4c8-483d-8803-c24e00251991
+    // conversation: https://claude.ai/share/02377e0b-47d9-41ab-b4f5-e94a7832c9c2
 
     // convert [[term]] text to clickable buttons by splitting the double brackets
     let makeClickableTerms = (bodyText) => {
@@ -144,6 +144,9 @@ let renderItems = (data) => {
 
         temp.innerHTML = bodyString;
 
+        // // asked claude to remind and clarify to me the difference of textcontent and innerhtml
+        // // conversation: https://claude.ai/share/03efce1b-3d63-40fe-9717-7d4e3636c9e1
+      
         //return all text inside temp or inner visual text 
         let body = temp.textContent || temp.innerText;
 
@@ -202,6 +205,8 @@ let renderItems = (data) => {
 
 
 
+    // when building out the related terms, i asked claude if it would be more efficient to use the length property or a boolean to check for related terms
+    // conversation: https://claude.ai/share/3ce87fcf-b4c8-483d-8803-c24e00251991
     let buildRelatedHTML = (termData) => {
 
         let related = [];
@@ -294,62 +299,10 @@ let renderItems = (data) => {
     
 
 
-        // // starting with empty initials in case missing
-        // let initialsText = '';
-        // // if exist, fill variable with
-        // if (postData.initials){
-        //     initialsText = postData.initials;
-        // }
 
-        // // building the title text
-        // let titleText = initialsText;
-
-        // // If title has initials alr, then add space before adding acc name
-        // if (titleText.length > 0) {
-        //     titleText = titleText + ' ';
-        // }
-
-        // // add accountname to title text
-        // titleText = titleText + postData.accountname;
-        // //put final title text in modal title element
-        // postTitle.textContent = titleText;
-
-
-
-        // //now building meta text
-        // let metaText = '';
-
-        // // account handle first
-        // metaText = metaText + postData.accounthandle;
-
-        // // separater and topic and time next
-        // metaText = metaText + ' • ' + postData.topic + ' • ' + postData.time;
-
-        // //put into post meta
-        // postMeta.textContent = metaText;
-
-
-
-        // // convert [[term]] into clickable term buttons using helper function
-        // let bodyHTML = makeClickableTerms(postData.body);
-
-        // // asked claude to remind and clarify to me the difference of textcontent and innerhtml
-        // // conversation: https://claude.ai/share/03efce1b-3d63-40fe-9717-7d4e3636c9e1
-        // // put into modal body
-        // postBody.innerHTML = bodyHTML;
-
-
-        // // now build stats
-        // let statsText = '';
-        // //add the likes
-        // statsText = statsText + '❤️ ' + postData.likes;
-        // //add reposts
-        // statsText = statsText + ' • 🔁 ' + postData.reposts;
-        // //add comments
-        // statsText = statsText + ' • 💬 ' + postData.comments;
-        // //put into posts element
-        // postStats.textContent = statsText;
         
+
+
 
         // show the modal
 	    postModal.hidden = false;
@@ -420,82 +373,6 @@ let renderItems = (data) => {
 
 
     });
-
-
-
-	// Loop through each item in the data array:
-	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-	// data.forEach((item) => {
-	// 	let conditionalClass = '' // Set an empty class variable.
-
-		// Conditional if this is `false` (“not true”):
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
-		// if (!item.alsoWrote) {
-		// 	conditionalClass = 'faded' // Update the variable.
-		// }
-
-		// Make a “template literal” as we have before, inserting your data (and maybe the class):
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-		// let listItem =
-		// 	`
-		// 		<li class="${conditionalClass}">
-		// 			<h2>${item.title}</h2>
-		// 			<img src="${item.posterImage}">
-		// 			<p>Released in <time>${item.year}</time></p>
-		// 			<p><em>${item.runTime}</em></p>
-		// 			<a href="${item.imdbLink}">
-		// 				<p>${item.imdbRating} / 10 →</p>
-		// 			</a>
-		// 		</li>
-		// 	`
-
-		// dataList.insertAdjacentHTML('beforeend', listItem) // Add it to the `ul`!
-
-		// Don’t feel limited to `ul > li` for these—you can insert any DOM, anywhere!
-// 	})
-// }
-
-
-
-    //helper function for positioning term modals
-    //reusing from getBoundingCLientRect() positioning logic with the use of classes -> then styling within CSS, rather than inline JS styles
-    // let positionTermPanel = () => {
-
-    //     //grabbign elements
-    //     let postModal = document.getElementById('post-modal');
-
-    //     let postCard;
-    //     if (postModal) {
-    //         postCard = postModal.querySelector('.modal-content');
-    //     }
-
-    //     let termPanel = document.querySelector('#term-modal .modal-content');
-
-    //     // asked claude if there is a way to retrieve the size and position of an element relative to the viewport
-    //     // also asked about styling within the parameters of getBoundingClientRect(), which apparently is better for dynamic styling whereas CSS styling is more static
-    //     // conversation: https://claude.ai/share/a00a2cac-af1b-4129-a164-ea209a9a1477
-    //     if (postModal && !postModal.hidden && postCard && termPanel) {
-    //         let rect = postCard.getBoundingClientRect();
-    //         let gap = 8;
-
-    //         termPanel.classList.add('term-panel-anchor');
-    //         termPanel.style.setProperty('--term-panel-top', `${rect.bottom + gap}px`);
-
-    //     } else if (termPanel) {
-
-    //         termPanel.classList.remove('term-panel-anchor');
-    //         termPanel.style.removeProperty('--term-panel-top');
-    //     }
-
-
-
-    // }
-
-
-
-
-
-
 
 
 
@@ -635,38 +512,7 @@ let renderItems = (data) => {
             
 
 
-        //     modalTerm.textContent = previousTerm.term;
-        //     modalDefinition.textContent = previousTerm.definition;
-
-
-
-        //     modalRelated.innerHTML = relatedHTML;
-        //     postInner.dataset.type = 'term';
-        //     postInner.dataset.key = previousKey;
-
-
-
-            
-        //     // add classlist hidden to the back button to hide on first term only
-        //     // when user presses back to first term, termHistory still has first term sttored in
-        //     if (termHistory.length === 0){
-        //         backButton.classList.add('hidden');
-        //     } else {
-        //         backButton.classList.remove('hidden');
-
-        //     }
-
-    
-
-        //     return;
-
-
-
-
-
-
-        // }
-
+       
 
 
 
@@ -826,11 +672,21 @@ fetch('./rhet-json/data.json')
 
 });
 
+
+
+
+
+
+
+
+
+// for info button
+
 let infoBtn = document.getElementById('info-btn');
 let infoModal = document.getElementById('info-modal');
 let infoClose = document.getElementById('info-modal-close');
 
-//opening the info modal on first load
+//opening the info modal on first load so user has context of what the interface purpose is
 infoModal.hidden = false;
 
 // closing the info modal
