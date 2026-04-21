@@ -202,11 +202,24 @@ h1 span{
     text-align:left;
     font-weight:350;
     margin-block:1rem;
-    line-height:1.5rem;
+    line-height:1.2rem;
     letter-spacing:.05ch;
-    font-size:1rem;
+    font-size:.85rem;
+}
+@media (768px <= width <= 1024px) {
+    .info-desc{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
 }
 
+@media (width > 1024px) {
+    .info-desc{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
+
+}
 
 
 
@@ -390,7 +403,7 @@ h1 span{
 .post-body{
     /* margin-block:.25rem; */
     margin-inline-start:3.75rem;
-    line-height:1.5rem;
+    
     font-weight:400;
     letter-spacing:.02ch;
     backdrop-filter: blur(10px);
@@ -519,10 +532,23 @@ h1 span{
 	border: var(--1px) solid var(--dark-gray);
 	border-radius: var(--25px);
 	padding: 1.5rem;
-   
+    font-size: .85rem;
+    line-height: 1.2rem;
 
+}
 
-    
+@media (768px <= width <= 1024px) {
+    #post-modal .modal-content{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
+}
+
+@media (width > 1024px) {
+    #post-modal .modal-content{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
 
 }
 
@@ -530,7 +556,23 @@ h1 span{
     backdrop-filter: blur(0px);
     background: var(--white);
     mask-image: linear-gradient(to bottom, black, black);
-    
+    font-size: .85rem;
+    line-height: 1.2rem;
+
+}
+
+@media (768px <= width <= 1024px) {
+    .post-body{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
+}
+
+@media (width > 1024px) {
+    .post-body{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
 
 }
 
@@ -612,9 +654,23 @@ hr{
 }
 
 #inline-term-definition{
-    line-height:1.5rem;
+    font-size: .85rem;
+    line-height: 1.2rem;
+}
+@media (768px <= width <= 1024px) {
+    #inline-term-definition{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
 }
 
+@media (width > 1024px) {
+    #inline-term-definition{
+        font-size: 1rem;
+        line-height:1.5rem;
+    }
+
+}
 
 #inline-term-related{
     margin-block-end:.5rem;
