@@ -88,11 +88,11 @@ body{
 h1{
     margin-block:3rem 2rem;
     text-align:center;
-    font-size:4rem;
+    font-size:2.5rem;
     text-transform: uppercase;
     font-weight:800;
-    letter-spacing:.2em;
-    line-height: 3.75rem;
+    letter-spacing:.1em;
+    line-height: 2.25rem;
     color:var(--off-black);
 }
 
@@ -101,10 +101,18 @@ h1 span{
     -webkit-text-stroke: var(--2px) var(--off-black);
 }
 @media (768px <= width <= 1024px) {
-  
+    h1{
+        font-size:4rem;
+        line-height: 3.75rem;
+        letter-spacing:.2em;
+    }
 }
 @media (width > 1024px) {
-  
+    h1{
+        font-size:4rem;
+        line-height: 3.75rem;
+        letter-spacing:.2em;
+    }
 }
 
 
